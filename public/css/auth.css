@@ -1,0 +1,33 @@
+body {
+    background-image: radial-gradient(#0575E6, #0020dd);
+    position: relative;
+    overflow: hidden;
+    font-family: Raleway, 'Roboto', Arial, Serif, sans-serif;
+}
+
+.main {
+    width: 1400px;
+    margin: 260px auto;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 10%;
+    padding: 20px;
+}
+
+.login-title {
+    color: #0020dd;
+    font-size: 36pt;
+    vertical-align: middle;
+}
+
+.nav-link {
+    color: #0020dd;
+}
+
+.nav-link.active {
+    background-color: #0020dd;
+    font-weight: bold;
+    color: white;
+}

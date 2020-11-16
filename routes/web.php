@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(
+    ['namespace'=>'Auth', 'as' => 'auth.'],
+    function (){
+        Route::get('/', [LoginController::class, 'showLoginForm'])->name('showLogin');
+        Route::post('login', [LoginController::class, 'login'])->name('login');
+
+        Route::get('register', [RegisterController::class, 'showRegister'])->name('showRegister');
+        Route::post('register', [RegisterController::class, 'register'])->name('register');
+
+        Route::post('lagout', [LoginController::class, 'logout'])->name('logout');
+    }
+);
+
+Route::group(
+    ['namespace'=>'Admin', 'as' => 'admin.', 'middleware' => 'auth', 'prefix' => 'admin'],
+    function (){
+
+    }
+);
