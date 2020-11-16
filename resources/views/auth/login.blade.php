@@ -9,19 +9,7 @@
     <div class="row">
         <div class="col-md-12">
             <form method="POST" action="{{ route('auth.login') }}" style="margin-top: 20px">
-                @if(session('Success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{session('Success')}}
-                    </div>
-                @elseif(session('Error'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                @include('layouts.alert')
                 @csrf
                 <div class="form-group">
                     <input name="email" id="email" type="email" class="form-control rounded-pill" placeholder="Email" required autocomplete="off">

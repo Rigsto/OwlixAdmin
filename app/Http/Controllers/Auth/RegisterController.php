@@ -3,14 +3,24 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\OwlixApi;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use GrahamCampbell\ResultType\Success;
 use GuzzleHttp\Client;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
+    use RegistersUsers;
+
+    public function __construct(){
+        $this->middleware('guest');
+    }
+
     public function showRegister(){
         return view('auth.register');
     }
@@ -24,6 +34,15 @@ class RegisterController extends Controller
         ]);
     }
 
+    protected function create(array $data, $token)
+    {
+        return User::create([
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'token' => $token
+        ]);
+    }
+
     public function register(Request $request){
         $validator = $this->registerValidator($request->all());
 
@@ -32,7 +51,7 @@ class RegisterController extends Controller
         }
 
         $client = new Client();
-        $response = $client->post($this->apiLink->register(), [
+        $response = $client->post((new OwlixApi())->register(), [
             'headers' =>[
                 'Accept' => 'application/json'
             ],
@@ -47,8 +66,9 @@ class RegisterController extends Controller
         $content =  json_decode($response->getBody(), true);
 
         if (strtolower($content['status']) == 'success'){
-            $this->setApiKey($content['data']['token']);
-            return redirect()->route('admin.home');
+            $this->create($request->all(), $content['data']['token']);
+
+            return redirect()->route('auth.showLogin')->with('Success', 'Register Successful, Please Login!');
         }
 
         return redirect()->route('auth.showRegister')->with('Fail', $content['message']);
