@@ -3,6 +3,7 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <img src="{{ asset('img/logo.png') }}" alt="" style="max-width: 80%">
+            <p>{{ $api ?? "Kosong" }}</p>
         </div>
     </div>
     <div class="row">
@@ -14,12 +15,16 @@
                     </div>
                 @elseif(session('Error'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{session('Error')}}
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
                 @csrf
                 <div class="form-group">
-                    <input name="username" id="username" type="text" class="form-control rounded-pill" placeholder="Email" required autocomplete="off">
+                    <input name="email" id="email" type="email" class="form-control rounded-pill" placeholder="Email" required autocomplete="off">
                 </div>
                 <div class="form-group">
                     <input type="password" name="password" id="password" class="form-control rounded-pill" placeholder="Password" required>
