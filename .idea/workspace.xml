@@ -19,17 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="order design done">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/omsetowlix.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/omsetowlix.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="donasi done">
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +205,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605433962771</updated>
       <workItem from="1605433963984" duration="19888000" />
-      <workItem from="1605586659776" duration="23238000" />
+      <workItem from="1605586659776" duration="23554000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -272,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605608601068</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="donasi done">
+      <created>1605611638092</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605611638092</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +298,8 @@
     <MESSAGE value="dashboard done" />
     <MESSAGE value="set datatables to omset owlix" />
     <MESSAGE value="order design done" />
-    <option name="LAST_COMMIT_MESSAGE" value="order design done" />
+    <MESSAGE value="donasi done" />
+    <option name="LAST_COMMIT_MESSAGE" value="donasi done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605545560292">

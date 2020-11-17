@@ -39,6 +39,7 @@ Route::group(
         Route::get('order', [FinanceController::class, 'getAllOrder'])->name('order.index');
         Route::get('order/{id}', [FinanceController::class, 'getOrder'])->name('order.show');
         Route::get('donasi', [FinanceController::class, 'getAllDonasi'])->name('donasi.index');
+        Route::get('donasi/create', [FinanceController::class, 'addDonasi'])->name('donasi.create');
         Route::get('donasi/{id}', [FinanceController::class, 'getDonasi'])->name('donasi.show');
         Route::delete('donasi/{id}', [FinanceController::class, 'deleteDonasi'])->name('donasi.delete');
     }
