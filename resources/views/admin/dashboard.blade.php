@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
-                                <div class="small font-weight-bold text-primary text-uppercase mb-1">Jumlah User Aplikasi</div>
+                                <div class="small font-weight-bold text-primary text-uppercase mb-1"><a href="{{ route('admin.zone', 1) }}">Jumlah User Aplikasi</a></div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">10.000</div>
                             </div>
                             <div class="col-auto">
@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
-                                <div class="small font-weight-bold text-success text-uppercase mb-1">Jumlah User Zona 2</div>
+                                <div class="small font-weight-bold text-success text-uppercase mb-1"><a href="{{ route('admin.zone', 2) }}">Jumlah User Zona 2</a></div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">8.500</div>
                             </div>
                             <div class="col-auto">
@@ -43,7 +43,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
-                                <div class="small font-weight-bold text-info text-uppercase mb-1">Jumlah User Zona 3</div>
+                                <div class="small font-weight-bold text-info text-uppercase mb-1"><a href="{{ route('admin.zone', 3) }}">Jumlah User Zona 3</a></div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">15.000</div>
                             </div>
                             <div class="col-auto">

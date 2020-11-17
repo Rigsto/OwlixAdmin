@@ -31,7 +31,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a href="" class="collapse-item">Mading / Info</a>
                 <a href="" class="collapse-item">Push Notif</a>
-                <a href="" class="collapse-item">Kategori</a>
+                <a href="{{ route('admin.categories') }}" class="collapse-item">Kategori</a>
             </div>
         </div>
     </li>
@@ -41,8 +41,6 @@
         </a>
         <div id="collapseSettings" class="collapse" aria-labelledby="headingSettings" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a href="" class="collapse-item">Metode Pembayaran</a>
-                <a href="" class="collapse-item">Metode Pengiriman</a>
                 <a href="" class="collapse-item">Suspend Akun</a>
             </div>
         </div>
