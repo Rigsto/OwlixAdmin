@@ -11,4 +11,8 @@ class HomeController extends Controller
     public function home(){
         return view('admin.dashboard');
     }
+
+    public function omsetOwlix(){
+        return view('admin.finance.omsetowlix');
+    }
 }

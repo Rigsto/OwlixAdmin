@@ -10,7 +10,7 @@
         </a>
         <div id="collapseFinance" class="collapse" aria-labelledby="headingFinance" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a href="" class="collapse-item">Omset Owlix</a>
+                <a href="{{ route('admin.omset') }}" class="collapse-item">Omset Owlix</a>
                 <a href="" class="collapse-item">Jumlah Order</a>
                 <a href="" class="collapse-item">Penarikan Saldo</a>
                 <a href="" class="collapse-item">Pengembalian Saldo</a>

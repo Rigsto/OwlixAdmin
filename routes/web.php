@@ -33,6 +33,6 @@ Route::group(
     ['namespace'=>'Admin', 'as' => 'admin.', 'middleware' => 'auth', 'prefix' => 'admin'],
     function (){
         Route::get('home', [HomeController::class, 'home'])->name('home');
-
+        Route::get('omset', [HomeController::class, 'omsetOwlix'])->name('omset');
     }
 );
