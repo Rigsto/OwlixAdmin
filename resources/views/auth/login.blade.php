@@ -3,7 +3,6 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <img src="{{ asset('img/logo.png') }}" alt="" style="max-width: 80%">
-            <p>{{ $api ?? "Kosong" }}</p>
         </div>
     </div>
     <div class="row">
@@ -23,9 +22,9 @@
             </form>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            Don't have any account? <a href="{{ route('auth.showRegister') }}">Register Now</a>
-        </div>
-    </div>
+{{--    <div class="row">--}}
+{{--        <div class="col-md-12 text-center">--}}
+{{--            Don't have any account? <a href="{{ route('auth.showRegister') }}">Register Now</a>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 @endsection

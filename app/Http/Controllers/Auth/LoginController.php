@@ -23,6 +23,10 @@ class LoginController extends Controller
     }
 
     public function showLoginForm(){
+        if (Auth::check()){
+            return redirect()->route('admin.home');
+        }
+
         return view('auth.login');
     }
 
@@ -40,50 +44,48 @@ class LoginController extends Controller
             return redirect()->route('auth.showLogin')->with('Error', $validator->errors());
         }
 
-        $this->checkAccount($request);
+        $client = new Client();
+        $response = $client->post((new OwlixApi())->login(), [
+            'form_params' => [
+                'email' => $request->email,
+                'password' => $request->password
+            ]
+        ]);
 
-        if (Auth::attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ])) {
+        $content =  json_decode($response->getBody(), true);
 
-            $client = new Client();
-            $response = $client->post((new OwlixApi())->login(), [
-                'form_params' => [
-                    'email' => $request->email,
-                    'password' => $request->password
-                ]
-            ]);
+        if ($content['status'] == 'success'){
+            $this->updateToken($content['data']['token'], $request->email);
 
-            $content =  json_decode($response->getBody(), true);
-
-            if ($content['status'] == 'success'){
-                Auth::user()->update([
-                    'token' => $content['data']['token']
-                ]);
-
-                return redirect()->route('admin.home');
-            }
+            return redirect()->route('admin.home');
+        } else if ($content['status'] == 'failed') {
+            return redirect()->route('auth.showLogin')->with('Fail', $content['message']);
         }
 
         return redirect()->route('auth.showLogin')->with('Fail', 'Wrong Email or Password');
     }
 
-    public function checkAccount(Request $request){
-        if (!Auth::attempt([
-            'email' => $request->email,
-            'password' => $request->password
-        ])){
-            User::create([
-                'email' => $request->email,
-                'password' => Hash::make($request->password)
+    private function updateToken($token, $email){
+        $users = User::where('email', $email)->get();
+
+        if (count($users) == 1){
+            $user = $users->first();
+            $user->update([
+                'token' => $token
+            ]);
+        } else {
+            $user = User::create([
+                'email' => $email,
+                'token' => $token
             ]);
         }
+
+        Auth::loginUsingId($user->id);
     }
 
     public function logout(Request $request){
         $client = new Client();
-        $response = $client->get($this->apiLink->logout(), [
+        $response = $client->get((new OwlixApi())->logout(), [
 
         ]);
 

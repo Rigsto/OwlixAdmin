@@ -19,25 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="login register system done. Not sessioned yet">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/alert.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="login and register system working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable path="composer" />
@@ -209,7 +204,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605433962771</updated>
-      <workItem from="1605433963984" duration="18079000" />
+      <workItem from="1605433963984" duration="19888000" />
+      <workItem from="1605586659776" duration="853000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -225,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605544957129</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="login and register system working">
+      <created>1605547122890</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605547122890</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,12 +244,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="login page finished" />
     <MESSAGE value="login register system done. Not sessioned yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="login register system done. Not sessioned yet" />
+    <MESSAGE value="login and register system working" />
+    <option name="LAST_COMMIT_MESSAGE" value="login and register system working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605545560292">
@@ -257,9 +262,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="737" y="437" key="ComposerInitDialogKey/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605541433963" />
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605505323031">
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605547124697">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605505323031" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605547124697" />
   </component>
 </project>
