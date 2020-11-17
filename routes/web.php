@@ -38,6 +38,9 @@ Route::group(
         Route::get('omset', [FinanceController::class, 'omset'])->name('omset');
         Route::get('order', [FinanceController::class, 'getAllOrder'])->name('order.index');
         Route::get('order/{id}', [FinanceController::class, 'getOrder'])->name('order.show');
+        Route::get('saldo/penarikan', [FinanceController::class, 'getAllPenarikanSaldo'])->name('saldo.penarikan');
+        Route::get('saldo/pengembalian', [FinanceController::class, 'getAllPengembalianSaldo'])->name('saldo.pengembalian');
+        Route::get('voucher', [FinanceController::class, 'getAllVoucher'])->name('voucher');
         Route::get('donasi', [FinanceController::class, 'getAllDonasi'])->name('donasi.index');
         Route::get('donasi/create', [FinanceController::class, 'addDonasi'])->name('donasi.create');
         Route::get('donasi/{id}', [FinanceController::class, 'getDonasi'])->name('donasi.show');

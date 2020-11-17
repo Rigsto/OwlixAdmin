@@ -34,4 +34,16 @@ class FinanceController extends Controller
     public function deleteDonasi($id){
 
     }
+
+    public function getAllVoucher(){
+        return view('admin.finance.voucher');
+    }
+
+    public function getAllPenarikanSaldo(){
+        return view('admin.finance.penarikansaldo');
+    }
+
+    public function getAllPengembalianSaldo(){
+        return view('admin.finance.pengembaliansaldo');
+    }
 }
