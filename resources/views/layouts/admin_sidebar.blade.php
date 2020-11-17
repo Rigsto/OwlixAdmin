@@ -17,7 +17,7 @@
                 <a href="{{ route('admin.saldo.penarikan') }}" class="collapse-item">Penarikan Saldo</a>
                 <a href="{{ route('admin.saldo.pengembalian') }}" class="collapse-item">Pengembalian Saldo</a>
                 <a href="{{ route('admin.voucher') }}" class="collapse-item">Voucher</a>
-                <a href="" class="collapse-item">Subscribe</a>
+                <a href="{{ route('admin.subscribe') }}" class="collapse-item">Subscribe</a>
                 <a href="" class="collapse-item">Owlix Network</a>
                 <a href="{{ route('admin.donasi.index') }}" class="collapse-item">Donasi</a>
             </div>

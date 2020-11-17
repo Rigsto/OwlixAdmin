@@ -41,6 +41,7 @@ Route::group(
         Route::get('saldo/penarikan', [FinanceController::class, 'getAllPenarikanSaldo'])->name('saldo.penarikan');
         Route::get('saldo/pengembalian', [FinanceController::class, 'getAllPengembalianSaldo'])->name('saldo.pengembalian');
         Route::get('voucher', [FinanceController::class, 'getAllVoucher'])->name('voucher');
+        Route::get('subscribe', [FinanceController::class, 'subscribe'])->name('subscribe');
         Route::get('donasi', [FinanceController::class, 'getAllDonasi'])->name('donasi.index');
         Route::get('donasi/create', [FinanceController::class, 'addDonasi'])->name('donasi.create');
         Route::get('donasi/{id}', [FinanceController::class, 'getDonasi'])->name('donasi.show');

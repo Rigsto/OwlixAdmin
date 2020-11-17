@@ -46,4 +46,8 @@ class FinanceController extends Controller
     public function getAllPengembalianSaldo(){
         return view('admin.finance.pengembaliansaldo');
     }
+
+    public function subscribe(){
+        return view('admin.finance.subscribe');
+    }
 }
