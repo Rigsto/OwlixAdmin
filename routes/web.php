@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -34,9 +34,12 @@ Route::group(
     ['namespace'=>'Admin', 'as' => 'admin.', 'middleware' => 'auth', 'prefix' => 'admin'],
     function (){
         Route::get('home', [HomeController::class, 'home'])->name('home');
-        Route::get('omset', [HomeController::class, 'omsetOwlix'])->name('omset');
 
-        Route::get('order', [OrderController::class, 'index'])->name('order.index');
-        Route::get('order/{id}', [OrderController::class, 'show'])->name('order.show');
+        Route::get('omset', [FinanceController::class, 'omset'])->name('omset');
+        Route::get('order', [FinanceController::class, 'getAllOrder'])->name('order.index');
+        Route::get('order/{id}', [FinanceController::class, 'getOrder'])->name('order.show');
+        Route::get('donasi', [FinanceController::class, 'getAllDonasi'])->name('donasi.index');
+        Route::get('donasi/{id}', [FinanceController::class, 'getDonasi'])->name('donasi.show');
+        Route::delete('donasi/{id}', [FinanceController::class, 'deleteDonasi'])->name('donasi.delete');
     }
 );

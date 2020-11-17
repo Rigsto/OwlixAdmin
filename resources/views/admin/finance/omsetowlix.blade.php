@@ -8,8 +8,8 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable">
-                        <thead>
+                    <table class="table table-striped table-bordered" id="dataTable">
+                        <thead class="thead-dark">
                             <tr>
                                 <th>Bulan/Tahun</th>
                                 <th>Subscribe</th>
@@ -17,7 +17,7 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-gray-800">
                         <tr>
                             <td>September/2020</td>
                             <td>Rp. 10.000.000</td>

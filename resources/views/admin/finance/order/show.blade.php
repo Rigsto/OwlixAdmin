@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped" id="dataTable">
+                    <table class="table table-striped table-bordered" id="dataTable">
                         <thead class="thead-dark">
                         <tr>
                             <th>Produk</th>
@@ -72,7 +72,7 @@
                             <th>Sub Total</th>
                         </tr>
                         </thead>
-                        <tbody style="color: black">
+                        <tbody class="text-gray-800">
                         <tr>
                             <td>Frozen Food isi 20 pcs</td>
                             <td class="text-center">2</td>

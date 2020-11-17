@@ -3,34 +3,30 @@
     <div class="container-fluid">
         @include('layouts.alert')
         <div class="d-sm-flex align-items center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 text-uppercase">Jumlah Order</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-uppercase">Donasi</h1>
         </div>
         <div class="card shadow mb-4">
-{{--            <div class="card-header py-3">--}}
-{{--                <h6 class="m-0 font-weight-bold text-primary">Omset Owlix per bulan</h6>--}}
-{{--            </div>--}}
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="dataTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Tanggal</th>
-                            <th>No. Invoice</th>
-                            <th>Nama Pembeli</th>
-                            <th>Status Bayar</th>
-                            <th>Total</th>
+                            <th>Panti / Yayasan</th>
+                            <th>Nama Pengurus</th>
+                            <th>Alamat</th>
+                            <th>Total Donasi</th>
                             <th></th>
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
                         <tr>
-                            <td>26 Sep 2020 19.00</td>
-                            <td>INV/1/200709473</td>
-                            <td>Sekar Arum</td>
-                            <td>Diterima</td>
-                            <td>Rp. 50.000</td>
-                            <td>
-                                <a class="btn btn-info btn-circle" href="{{ route('admin.order.show', ['id'=>1]) }}" title="Order Detail"><i class="fa fa-eye"></i></a>
+                            <td>Panti Asuhan Muhammadiyah</td>
+                            <td>Pak Agus</td>
+                            <td>Jl. Mayjend Sungkono</td>
+                            <td>Rp. 500.000</td>
+                            <td class="text-center">
+                                <a class="btn btn-info btn-circle" href="{{ route('admin.donasi.show', ['id'=>1]) }}" title="Detail"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-danger btn-circle" href="" title="Delete"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         </tbody>

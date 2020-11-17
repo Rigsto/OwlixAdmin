@@ -19,7 +19,7 @@
                 <a href="" class="collapse-item">Voucher</a>
                 <a href="" class="collapse-item">Subscribe</a>
                 <a href="" class="collapse-item">Owlix Network</a>
-                <a href="" class="collapse-item">Donasi</a>
+                <a href="{{ route('admin.donasi.index') }}" class="collapse-item">Donasi</a>
             </div>
         </div>
     </li>
