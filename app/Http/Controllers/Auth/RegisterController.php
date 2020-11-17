@@ -5,23 +5,21 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\OwlixApi;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use GrahamCampbell\ResultType\Success;
 use GuzzleHttp\Client;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
     use RegistersUsers;
 
-    public function __construct(){
-        $this->middleware('guest');
-    }
-
     public function showRegister(){
+        if (Auth::check()){
+            return redirect()->route('admin.home');
+        }
+
         return view('auth.register');
     }
 

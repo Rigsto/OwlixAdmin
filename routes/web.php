@@ -22,8 +22,8 @@ Route::group(
         Route::get('/', [LoginController::class, 'showLoginForm'])->name('showLogin');
         Route::post('login', [LoginController::class, 'login'])->name('login');
 
-        Route::get('register', [RegisterController::class, 'showRegister'])->name('showRegister');
-        Route::post('register', [RegisterController::class, 'register'])->name('register');
+        Route::get('yokbikinadminyok', [RegisterController::class, 'showRegister'])->name('showRegister');
+        Route::post('yokbikinadminyok', [RegisterController::class, 'register'])->name('register');
 
         Route::post('lagout', [LoginController::class, 'logout'])->name('logout');
     }
