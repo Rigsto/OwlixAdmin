@@ -22,7 +22,7 @@
     @yield('styles')
 </head>
 
-<body id="page-top">
+<body id="page-top" style="background: url({{asset('img/logo-opacity.svg')}})">
 <!-- Page Wrapper -->
 <div id="wrapper">
     <!-- Sidebar -->

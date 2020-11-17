@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-12 text-center">
-            <img src="{{ asset('img/logo.png') }}" alt="" style="max-width: 80%">
+            <img src="{{ asset('img/logo.svg') }}" alt="" style="max-width: 80%">
         </div>
     </div>
     <div class="row">

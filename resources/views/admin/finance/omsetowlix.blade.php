@@ -6,9 +6,6 @@
             <h1 class="h3 mb-0 text-gray-800">Omset Owlix</h1>
         </div>
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Omset Owlix per bulan</h6>
-            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable">
@@ -21,7 +18,18 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                        <tr>
+                            <td>September/2020</td>
+                            <td>Rp. 10.000.000</td>
+                            <td>Rp. 1.000.000</td>
+                            <td>Rp. 11.000.000</td>
+                        </tr>
+                        <tr>
+                            <td>Oktober/2020</td>
+                            <td>Rp. 12.000.000</td>
+                            <td>Rp. 2.000.000</td>
+                            <td>Rp. 14.000.000</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
