@@ -5,7 +5,7 @@
                 @csrf
                 <input type="hidden" value="PATCH" name="_method">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Kategori Toko</h4>
+                    <h4 class="modal-title">Edit Kategori Toko</h4>
                     <button class="close" type="button" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body text-left">
@@ -17,7 +17,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>
-                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), 1, ['class'=>'form-control']) !!}
+                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), 1, ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
                             </div>
                         </div>
                     </div>

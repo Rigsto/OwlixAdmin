@@ -1,19 +1,26 @@
-<div class="modal fade" id="updateItem-{{$item['id']}}">
+<div class="modal fade" id="updateNotif-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ route('admin.category.item.update', $partner['id']) }}" method="POST">
+            <form action="{{ route('admin.notif.update', 1) }}" method="POST">
                 @csrf
-                <input type="hidden" value="PATCH" name="_method">
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Kategori Produk</h4>
+                    <h4 class="modal-title">Edit Notifikasi</h4>
                     <button class="close" type="button" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body text-left">
                     <div class="row">
                         <div class="col-md-12 text-gray-800">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                {!! Form::text('name', $partner['name'], ['class'=>'form-control']) !!}
+                                <label for="tgl">Tanggal</label>
+                                {!! Form::date('tgl', \Carbon\Carbon::now(), ['class'=>'form-control']) !!}
+                            </div>
+                            <div class="form-group">
+                                <label for="headline">Headline</label>
+                                {!! Form::text('headline', 'Gemar Membaca', ['class'=>'form-control']) !!}
+                            </div>
+                            <div class="form-group">
+                                <label for="deskripsi">Deskripsi</label>
+                                {!! Form::textarea('deskripsi', 'Membaca seru Deng..', ['class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>

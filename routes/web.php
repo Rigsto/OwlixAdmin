@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Admin\CSController;
+use App\Http\Controllers\Admin\CustomerService\CategoryController;
+use App\Http\Controllers\Admin\CustomerService\MadingController;
+use App\Http\Controllers\Admin\CustomerService\PushNotifController;
 use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Auth\LoginController;
@@ -27,7 +29,7 @@ Route::group(
         Route::get('yokbikinadminyok', [RegisterController::class, 'showRegister'])->name('showRegister');
         Route::post('yokbikinadminyok', [RegisterController::class, 'register'])->name('register');
 
-        Route::post('lagout', [LoginController::class, 'logout'])->name('logout');
+        Route::post('logout', [LoginController::class, 'logout'])->name('logout');
     }
 );
 
@@ -37,6 +39,7 @@ Route::group(
         Route::get('home', [HomeController::class, 'home'])->name('home');
         Route::get('user/zone/{id}', [HomeController::class, 'userZone'])->name('zone');
 
+        // Finance
         Route::get('omset', [FinanceController::class, 'omset'])->name('omset');
         Route::get('order', [FinanceController::class, 'getAllOrder'])->name('order.index');
         Route::get('order/{id}', [FinanceController::class, 'getOrder'])->name('order.show');
@@ -49,12 +52,28 @@ Route::group(
         Route::get('donasi/{id}', [FinanceController::class, 'getDonasi'])->name('donasi.show');
         Route::delete('donasi/{id}', [FinanceController::class, 'deleteDonasi'])->name('donasi.delete');
 
-        Route::get('categories', [CSController::class, 'category'])->name('categories');
-        Route::post('category/toko', [CSController::class, 'storeCategoryToko'])->name('category.toko.store');
-        Route::post('category/item', [CSController::class, 'storeCategoryItem'])->name('category.item.store');
-        Route::patch('category/toko/{id}', [CSController::class, 'updateCategoryToko'])->name('category.toko.update');
-        Route::patch('category/item/{id}', [CSController::class, 'updateCategoryItem'])->name('category.item.update');
-        Route::delete('category/toko/{id}', [CSController::class, 'deleteCategoryToko'])->name('category.toko.delete');
-        Route::delete('category/item/{id}', [CSController::class, 'deleteCategoryItem'])->name('category.item.delete');
+        // Customer Service
+        Route::group(
+            ['namespace'=>'CustomerService'],
+            function (){
+                Route::get('info', [MadingController::class, 'index'])->name('info');
+                Route::post('info', [MadingController::class, 'store'])->name('info.store');
+                Route::patch('info/{id}', [MadingController::class, 'update'])->name('info.update');
+                Route::delete('info/{id}', [MadingController::class, 'delete'])->name('info.delete');
+
+                Route::get('notif', [PushNotifController::class, 'index'])->name('notif');
+                Route::post('notif', [PushNotifController::class, 'store'])->name('notif.store');
+                Route::patch('notif/{id}', [PushNotifController::class, 'update'])->name('notif.update');
+                Route::delete('notif/{id}', [PushNotifController::class, 'delete'])->name('notif.delete');
+
+                Route::get('categories', [CategoryController::class, 'category'])->name('categories');
+                Route::post('category/toko', [CategoryController::class, 'storeCategoryToko'])->name('category.toko.store');
+                Route::post('category/item', [CategoryController::class, 'storeCategoryItem'])->name('category.item.store');
+                Route::patch('category/toko/{id}', [CategoryController::class, 'updateCategoryToko'])->name('category.toko.update');
+                Route::patch('category/item/{id}', [CategoryController::class, 'updateCategoryItem'])->name('category.item.update');
+                Route::delete('category/toko/{id}', [CategoryController::class, 'deleteCategoryToko'])->name('category.toko.delete');
+                Route::delete('category/item/{id}', [CategoryController::class, 'deleteCategoryItem'])->name('category.item.delete');
+            }
+        );
     }
 );

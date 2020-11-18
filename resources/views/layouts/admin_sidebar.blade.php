@@ -29,8 +29,8 @@
         </a>
         <div id="collapseCS" class="collapse" aria-labelledby="headingCS" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a href="" class="collapse-item">Mading / Info</a>
-                <a href="" class="collapse-item">Push Notif</a>
+                <a href="{{ route('admin.info') }}" class="collapse-item">Mading / Info</a>
+                <a href="{{ route('admin.notif') }}" class="collapse-item">Push Notif</a>
                 <a href="{{ route('admin.categories') }}" class="collapse-item">Kategori</a>
             </div>
         </div>

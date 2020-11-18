@@ -16,11 +16,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>
-                                <select name="status" class="form-control">
-                                    <option>--Pilih salah satu--</option>
-                                    <option value="1">Aktif</option>
-                                    <option value="0">Tidak Aktif</option>
-                                </select>
+                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), null, ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
                             </div>
                         </div>
                     </div>

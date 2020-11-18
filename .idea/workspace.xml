@@ -19,25 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="subsribe done">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CSController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone1.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone2.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone3.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_kategoriItem.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_kategoriToko.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_kategoriItem.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_kategoriToko.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OwlixAdmin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OwlixAdmin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="category and user zone done">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_pushnotif.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_pushnotif.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CSController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_kategoriItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_kategoriItem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_kategoriToko.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_kategoriToko.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_kategoriItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_kategoriItem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_kategoriToko.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_kategoriToko.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +190,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -224,7 +228,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605433962771</updated>
       <workItem from="1605433963984" duration="19888000" />
-      <workItem from="1605586659776" duration="43360000" />
+      <workItem from="1605586659776" duration="49350000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -310,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605623786775</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="category and user zone done">
+      <created>1605637631055</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605637631055</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,13 +353,14 @@
     <MESSAGE value="added tombol create panti untuk donasi" />
     <MESSAGE value="voucher, penarikan saldo, pengembalian saldo done" />
     <MESSAGE value="subsribe done" />
-    <option name="LAST_COMMIT_MESSAGE" value="subsribe done" />
+    <MESSAGE value="category and user zone done" />
+    <option name="LAST_COMMIT_MESSAGE" value="category and user zone done" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605545560292">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605675005613">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605545560292" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605675005613" />
     <state x="737" y="437" key="ComposerInitDialogKey" timestamp="1605541433963">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -357,10 +369,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="761" y="247" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605635349713" />
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605637607701">
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605637634136">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605637607701" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605637634136" />
     <state x="2040" y="20" width="1414" height="1038" key="dock-window-1" timestamp="1605623770028">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

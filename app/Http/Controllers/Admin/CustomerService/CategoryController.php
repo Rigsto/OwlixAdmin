@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\CustomerService;
 
 use App\Http\Controllers\Controller;
 use App\Models\OwlixApi;
 use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-class CSController extends Controller
+class CategoryController extends Controller
 {
     public function category(){
         $client = new Client();
         $partner = $client->get((new OwlixApi())->readPartnerCategories(), [
-             'headers' => [
-                 'Authorization' => 'Bearer '.Auth::user()->token,
-             ]
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ]
         ])->getBody();
 
         $item = $client->get((new OwlixApi())->readItemCategories(), [
@@ -56,9 +56,9 @@ class CSController extends Controller
 
         $client = new Client();
         $response = $client->post((new OwlixApi())->createPartnerCategory(), [
-             'headers' => [
-                 'Authorization' => 'Bearer '.Auth::user()->token,
-             ],
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
             'form_params' => [
                 'name' => $request->name
             ]
