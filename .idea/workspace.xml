@@ -19,27 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="category and user zone done">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/CategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_pushnotif.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_pushnotif.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="push notif and mading done,&#10;change controller system and design bug fixes">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/settings/suspendaccount.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CSController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_kategoriItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_kategoriItem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_kategoriToko.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_kategoriToko.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_kategoriItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_kategoriItem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_kategoriToko.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_kategoriToko.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_topnav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_topnav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +217,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605433962771</updated>
       <workItem from="1605433963984" duration="19888000" />
-      <workItem from="1605586659776" duration="49350000" />
+      <workItem from="1605586659776" duration="55376000" />
+      <workItem from="1605769744986" duration="3176000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -321,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605637631055</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="push notif and mading done,&#10;change controller system and design bug fixes">
+      <created>1605678164504</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605678164504</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +351,8 @@
     <MESSAGE value="voucher, penarikan saldo, pengembalian saldo done" />
     <MESSAGE value="subsribe done" />
     <MESSAGE value="category and user zone done" />
-    <option name="LAST_COMMIT_MESSAGE" value="category and user zone done" />
+    <MESSAGE value="push notif and mading done,&#10;change controller system and design bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="push notif and mading done,&#10;change controller system and design bug fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605675005613">
@@ -373,6 +371,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605637634136" />
+    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605678123125">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605678123125" />
     <state x="2040" y="20" width="1414" height="1038" key="dock-window-1" timestamp="1605623770028">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

@@ -41,7 +41,7 @@
         </a>
         <div id="collapseSettings" class="collapse" aria-labelledby="headingSettings" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a href="" class="collapse-item">Suspend Akun</a>
+                <a href="{{ route('admin.suspend') }}" class="collapse-item">Suspend Akun</a>
             </div>
         </div>
     </li>

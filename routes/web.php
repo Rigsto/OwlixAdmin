@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CustomerService\MadingController;
 use App\Http\Controllers\Admin\CustomerService\PushNotifController;
 use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -75,5 +76,7 @@ Route::group(
                 Route::delete('category/item/{id}', [CategoryController::class, 'deleteCategoryItem'])->name('category.item.delete');
             }
         );
+
+        Route::get('suspend/account', [SettingsController::class, 'index'])->name('suspend');
     }
 );

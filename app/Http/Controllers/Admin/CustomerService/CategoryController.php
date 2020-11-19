@@ -131,7 +131,7 @@ class CategoryController extends Controller
                 'Authorization' => 'Bearer '.Auth::user()->token,
             ],
             'form_params' => [
-                'id' => $id
+                'id_item_category' => $id
             ]
         ])->getBody();
 
