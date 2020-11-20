@@ -70,4 +70,66 @@ class OwlixApi {
     function addCity(){
         return $this->base_url."add_city";
     }
+
+    //--------------------------------------------------------------------------
+    //order
+    function getAllOrder(){
+        return $this->base_url."admin_get_all_order";
+    }
+
+    function getOrderDetail(){
+        return $this->base_url."admin_get_order_detail";
+    }
+
+    //--------------------------------------------------------------------------
+    //user
+    function getAllUser(){
+        return $this->base_url."get_all_user_per_zone";
+    }
+
+    //--------------------------------------------------------------------------
+    //orphanage
+    function createOrphanage(){
+        return $this->base_url."create_orphanage";
+    }
+
+    function readOrphanages(){
+        return $this->base_url."read_orphanage";
+    }
+
+    function updateOrphanage(){
+        return $this->base_url."update_orphanage";
+    }
+
+    function deleteOrphanage(){
+        return $this->base_url."delete_orphanage";
+    }
+
+    //--------------------------------------------------------------------------
+    //push notif
+    function readAllPushNotif(){
+        return $this->base_url."read_push_notification";
+    }
+
+    //--------------------------------------------------------------------------
+    //voucher
+    function createVoucher(){
+        return $this->base_url."create_voucher";
+    }
+
+    function readVouchers(){
+        return $this->base_url."read_voucher";
+    }
+
+    function updateVoucher(){
+        return $this->base_url."update_voucher";
+    }
+
+    function deleteVoucher(){
+        return $this->base_url."delete_voucher";
+    }
+
+    function readSingleVoucher(){
+        return $this->base_url."read_single_voucher";
+    }
 }

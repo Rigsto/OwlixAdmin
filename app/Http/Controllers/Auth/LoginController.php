@@ -54,7 +54,7 @@ class LoginController extends Controller
         $content =  json_decode($response->getBody(), true);
 
         if ($content['status'] == 'success'){
-            $this->updateToken($content['data']['token'], $request->email);
+            $this->updateToken($content['data']['token'], $request->email, $content['data']['detail']['name']);
 
             return redirect()->route('admin.home');
         } else if ($content['status'] == 'failed') {
@@ -64,18 +64,20 @@ class LoginController extends Controller
         return redirect()->route('auth.showLogin')->with('Fail', 'Wrong Email or Password');
     }
 
-    private function updateToken($token, $email){
+    private function updateToken($token, $email, $name){
         $users = User::where('email', $email)->get();
 
         if (count($users) == 1){
             $user = $users->first();
             $user->update([
-                'token' => $token
+                'token' => $token,
+                'name' => $name
             ]);
         } else {
             $user = User::create([
                 'email' => $email,
-                'token' => $token
+                'token' => $token,
+                'name' => $name
             ]);
         }
 
@@ -83,20 +85,22 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request){
-        $client = new Client();
-        $response = $client->get((new OwlixApi())->logout(), [
+        if (Auth::check()){
+            $client = new Client();
+            $response = $client->get((new OwlixApi())->logout(), [
 
-        ]);
-
-        $content = json_decode($response->getBody(), true);
-
-        if ($content['status'] == 'success'){
-            Auth::user()->update([
-                'token' => ''
             ]);
-        }
 
-        Auth::logout();
+            $content = json_decode($response->getBody(), true);
+
+            if ($content['status'] == 'success'){
+                Auth::user()->update([
+                    'token' => ''
+                ]);
+            }
+
+            Auth::logout();
+        }
         return redirect()->route('auth.showLogin');
     }
 }

@@ -12,7 +12,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-primary text-uppercase mb-1"><a href="{{ route('admin.zone', 1) }}">Jumlah User Aplikasi</a></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">10.000</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalPartner }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -28,7 +28,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-success text-uppercase mb-1"><a href="{{ route('admin.zone', 2) }}">Jumlah User Zona 2</a></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">8.500</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalStore }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -44,7 +44,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-info text-uppercase mb-1"><a href="{{ route('admin.zone', 3) }}">Jumlah User Zona 3</a></div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">15.000</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalCustomer }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -60,7 +60,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-danger text-uppercase mb-1">Total Donasi</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 20.000</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">xRp. 20.000x</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-money-bill fa-2x text-gray-300"></i>
@@ -76,7 +76,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-info text-uppercase mb-1">Jumlah Owlix Network</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">x20x</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-network-wired fa-2x text-gray-300"></i>
@@ -92,7 +92,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-primary text-uppercase mb-1">Jumlah Order</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">250</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalOrder }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -108,7 +108,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-success text-uppercase mb-1">Total Omset Owlix</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 100.000.000</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">xRp. 100.000.000x</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-money-bill fa-2x text-gray-300"></i>

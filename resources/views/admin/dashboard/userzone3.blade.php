@@ -17,16 +17,13 @@
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
+                        @foreach($users as $user)
                         <tr>
-                            <td>12 September 2020</td>
-                            <td>Sekar</td>
-                            <td>09274646545</td>
+                            <td>{{ \Carbon\Carbon::parse($user['created_at'])->toFormattedDateString() }}</td>
+                            <td>{{ $user['name'] }}</td>
+                            <td>{{ $user['phone_number'] }}</td>
                         </tr>
-                        <tr>
-                            <td>12 September 2020</td>
-                            <td>Hendy</td>
-                            <td>09274646545</td>
-                        </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
