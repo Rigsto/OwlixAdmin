@@ -11,14 +11,6 @@ class FinanceController extends Controller
         return view('admin.finance.omsetowlix');
     }
 
-    public function getAllOrder(){
-        return view('admin.finance.order.index');
-    }
-
-    public function getOrder($id){
-        return view('admin.finance.order.show');
-    }
-
     public function getAllDonasi(){
         return view('admin.finance.donasi.index');
     }
@@ -33,10 +25,6 @@ class FinanceController extends Controller
 
     public function deleteDonasi($id){
 
-    }
-
-    public function getAllVoucher(){
-        return view('admin.finance.voucher');
     }
 
     public function getAllPenarikanSaldo(){

@@ -6,9 +6,6 @@
             <h1 class="h3 mb-0 text-gray-800 text-uppercase">Jumlah Order</h1>
         </div>
         <div class="card shadow mb-4">
-{{--            <div class="card-header py-3">--}}
-{{--                <h6 class="m-0 font-weight-bold text-primary">Omset Owlix per bulan</h6>--}}
-{{--            </div>--}}
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="dataTable">
@@ -23,16 +20,25 @@
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
+                        @foreach($orders as $order)
                         <tr>
-                            <td>26 Sep 2020 19.00</td>
-                            <td>INV/1/200709473</td>
-                            <td>Sekar Arum</td>
-                            <td>Diterima</td>
-                            <td>Rp. 50.000</td>
+                            <td>{{ \Carbon\Carbon::parse($order['created_at']))->setTimeZone('Asia/Jakarta')->toDateTimeString() }}</td>
+                            <td>{{ $order['external_id'] }}</td>
+                            <td>{{ $order['id_customer'] }}</td>
+                            @if($order['status'] == 'NEW')
+                                <td class="text-uppercase text-warning">Menunggu Pembayaran</td>
+                            @elseif($order['status'] == 'PAID')
+                                <td class="text-uppercase text-primary">Diterima</td>
+                            @elseif($order['status'] == 'REJECTED')
+                                <td class="text-uppercase text-danger">Dibatalkan</td>
+                            @endif
+                            <td>{{ $order['status'] }}</td>
+                            <td>Rp. {{ number_format($order['amount'] + $order['delivery_expense'], 0, ",", ".") }}</td>
                             <td>
                                 <a class="btn btn-info btn-circle" href="{{ route('admin.order.show', ['id'=>1]) }}" title="Order Detail"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

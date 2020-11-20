@@ -54,22 +54,4 @@ class BaseDashboardController extends Controller
         }
         return [];
     }
-
-    public function getOrder($id){
-        $client = new Client();
-        $response = $client->get((new OwlixApi())->getOrderDetail(), [
-            'headers' => [
-                'Authorization' => 'Bearer '.Auth::user()->token,
-            ],
-            'form_params' => [
-                'id_order' => $id
-            ]
-        ])->getBody();
-
-        $content = json_decode($response, true);
-        if ($content['status'] == 'success'){
-            return $content['data'];
-        }
-        return [];
-    }
 }

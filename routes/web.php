@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\CustomerService\CategoryController;
 use App\Http\Controllers\Admin\CustomerService\MadingController;
 use App\Http\Controllers\Admin\CustomerService\PushNotifController;
+use App\Http\Controllers\Admin\Finance\OrderController;
+use App\Http\Controllers\Admin\Finance\VoucherController;
 use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\SettingsController;
@@ -41,12 +43,22 @@ Route::group(
         Route::get('user/zone/{id}', [HomeController::class, 'userZone'])->name('zone');
 
         // Finance
+        Route::group(
+            ['namespace'=>'Finance'],
+            function (){
+                Route::get('order', [OrderController::class, 'getAllOrder'])->name('order.index');
+                Route::get('order/{id}', [OrderController::class, 'getOrder'])->name('order.show');
+
+                Route::get('voucher', [VoucherController::class, 'getAllVoucher'])->name('voucher');
+                Route::post('voucher', [VoucherController::class, 'storeVoucher'])->name('voucher.store');
+                Route::patch('voucher/{id}', [VoucherController::class, 'updateVoucher'])->name('voucher.update');
+                Route::delete('voucher/{id}}', [VoucherController::class, 'deleteVoucher'])->name('voucher.delete');
+            }
+        );
+
         Route::get('omset', [FinanceController::class, 'omset'])->name('omset');
-        Route::get('order', [FinanceController::class, 'getAllOrder'])->name('order.index');
-        Route::get('order/{id}', [FinanceController::class, 'getOrder'])->name('order.show');
         Route::get('saldo/penarikan', [FinanceController::class, 'getAllPenarikanSaldo'])->name('saldo.penarikan');
         Route::get('saldo/pengembalian', [FinanceController::class, 'getAllPengembalianSaldo'])->name('saldo.pengembalian');
-        Route::get('voucher', [FinanceController::class, 'getAllVoucher'])->name('voucher');
         Route::get('subscribe', [FinanceController::class, 'subscribe'])->name('subscribe');
         Route::get('donasi', [FinanceController::class, 'getAllDonasi'])->name('donasi.index');
         Route::get('donasi/create', [FinanceController::class, 'addDonasi'])->name('donasi.create');

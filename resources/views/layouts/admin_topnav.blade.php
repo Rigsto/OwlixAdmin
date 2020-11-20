@@ -5,7 +5,7 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
             <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">admin1</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ \Illuminate\Support\Facades\Auth::user()->name }}</span>
                 <img class="img-profile rounded-circle" src="{{asset('img/logo-only.svg')}}" />
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

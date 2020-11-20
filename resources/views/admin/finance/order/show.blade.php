@@ -10,15 +10,15 @@
                 <div class="row no-gutters">
                     <div class="col-md-3">
                         <div class="font-weight-bold mb-1">No. Invoice</div>
-                        <div class="h5 mb-0 text-gray-800">INV/1/200709473</div>
+                        <div class="h5 mb-0 text-gray-800">{{ $order['external_id'] }}</div>
                     </div>
                     <div class="col-md-3">
                         <div class="font-weight-bold mb-1">Tanggal</div>
-                        <div class="h5 mb-0 text-gray-800">26 Sep 2020 19.00</div>
+                        <div class="h5 mb-0 text-gray-800">{{ \Carbon\Carbon::parse($order['created_at'])->setTimezone('Asia/Jakarta')->toDayDateTimeString()  }}</div>
                     </div>
                     <div class="col-md-3">
                         <div class="font-weight-bold mb-1">Alamat Pengiriman</div>
-                        <div class="h5 mb-0 text-gray-800">Jl. HR Muhammad 31,<br>Surabaya, Jawa Timur 60221</div>
+                        <div class="h5 mb-0 text-gray-800">{{ $order['customer']['address'].", ".$order['customer']['city_id']." ".$order['customer']['postal_code'].", ".$order['customer']['province_id']}}</div>
                     </div>
                     <div class="col-md-3">
                         <div class="font-weight-bold mb-1">Nama Mitra</div>
