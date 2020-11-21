@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CustomerService\CategoryController;
 use App\Http\Controllers\Admin\CustomerService\MadingController;
 use App\Http\Controllers\Admin\CustomerService\PushNotifController;
+use App\Http\Controllers\Admin\Finance\DonasiController;
 use App\Http\Controllers\Admin\Finance\OrderController;
 use App\Http\Controllers\Admin\Finance\VoucherController;
 use App\Http\Controllers\Admin\FinanceController;
@@ -53,6 +54,12 @@ Route::group(
                 Route::post('voucher', [VoucherController::class, 'storeVoucher'])->name('voucher.store');
                 Route::patch('voucher/{id}', [VoucherController::class, 'updateVoucher'])->name('voucher.update');
                 Route::delete('voucher/{id}}', [VoucherController::class, 'deleteVoucher'])->name('voucher.delete');
+
+                Route::get('donasi', [DonasiController::class, 'getOrphans'])->name('donasi.index');
+                Route::get('donasi/{id}', [DonasiController::class, 'getDonasi'])->name('donasi.show');
+                Route::post('donasi', [DonasiController::class, 'addOrphans'])->name('donasi.store');
+                Route::patch('donasi/{id}', [DonasiController::class, 'updateOrphans'])->name('donasi.update');
+                Route::delete('donasi/{id}', [DonasiController::class, 'deleteOrphans'])->name('donasi.delete');
             }
         );
 
@@ -60,10 +67,6 @@ Route::group(
         Route::get('saldo/penarikan', [FinanceController::class, 'getAllPenarikanSaldo'])->name('saldo.penarikan');
         Route::get('saldo/pengembalian', [FinanceController::class, 'getAllPengembalianSaldo'])->name('saldo.pengembalian');
         Route::get('subscribe', [FinanceController::class, 'subscribe'])->name('subscribe');
-        Route::get('donasi', [FinanceController::class, 'getAllDonasi'])->name('donasi.index');
-        Route::get('donasi/create', [FinanceController::class, 'addDonasi'])->name('donasi.create');
-        Route::get('donasi/{id}', [FinanceController::class, 'getDonasi'])->name('donasi.show');
-        Route::delete('donasi/{id}', [FinanceController::class, 'deleteDonasi'])->name('donasi.delete');
 
         // Customer Service
         Route::group(

@@ -172,4 +172,10 @@ class OwlixApi {
     function readCity(){
         return $this->url."read_city";
     }
+
+    //--------------------------------------------------------------------------
+    //donasi
+    function readDonation(){
+        return $this->base_url."read_donation";
+    }
 }

@@ -11,22 +11,6 @@ class FinanceController extends Controller
         return view('admin.finance.omsetowlix');
     }
 
-    public function getAllDonasi(){
-        return view('admin.finance.donasi.index');
-    }
-
-    public function addDonasi(){
-
-    }
-
-    public function getDonasi($id){
-        return view('admin.finance.donasi.show');
-    }
-
-    public function deleteDonasi($id){
-
-    }
-
     public function getAllPenarikanSaldo(){
         return view('admin.finance.penarikansaldo');
     }
