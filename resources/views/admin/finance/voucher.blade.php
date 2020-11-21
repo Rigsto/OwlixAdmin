@@ -18,6 +18,7 @@
                             <th>Tanggal</th>
                             <th>Diskon</th>
                             <th>Berlaku hingga</th>
+                            <th>Status</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -26,8 +27,12 @@
                         <tr>
                             <td>{{ \Carbon\Carbon::parse($voucher['created_at'])->setTimezone('Asia/Jakarta')->toFormattedDateString() }}</td>
                             <td>{{ $voucher['discount'] }}</td>
-                            <td>{{ \Carbon\Carbon::parse($voucher['expires_at'])->setTimezone('Asia/Jakarta')->toFormattedDateString()}}</td>
-\\
+                            <td>{{ \Carbon\Carbon::parse($voucher['expired_date'])->setTimezone('Asia/Jakarta')->toFormattedDateString()}}</td>
+                            @if($voucher['is_active'])
+                                <td class="text-success font-weight-bold text-uppercase">Aktif</td>
+                            @else
+                                <td class="text-danger font-weight-bold text-uppercase">Tidak Aktif</td>
+                            @endif
                             <td>
                                 <button type="button" class="btn btn-warning btn-circle" title="Edit" data-toggle="modal" data-target="#updateVoucher-{{$voucher['id']}}">
                                     <i class="fas fa-pencil-alt"></i>

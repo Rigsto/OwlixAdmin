@@ -18,6 +18,10 @@
                                 <label for="expired">Berlaku hingga</label>
                                 {!! Form::date('expired', null, ['class'=>'form-control', 'required']) !!}
                             </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), null, ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
+                            </div>
                         </div>
                     </div>
                 </div>

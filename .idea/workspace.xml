@@ -19,23 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="dashboard updated">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/temp.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="order done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OwlixApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OwlixApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_pushnotif.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/VoucherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/VoucherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_voucher.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_voucher.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +214,7 @@
       <workItem from="1605433963984" duration="19888000" />
       <workItem from="1605586659776" duration="55376000" />
       <workItem from="1605769744986" duration="28560000" />
-      <workItem from="1605959797735" duration="12201000" />
+      <workItem from="1605959797735" duration="13610000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -339,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605881151648</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="order done">
+      <created>1605985432854</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1605985432854</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +371,8 @@
     <MESSAGE value="push notif and mading done,&#10;change controller system and design bug fixes" />
     <MESSAGE value="many bug fixes" />
     <MESSAGE value="dashboard updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard updated" />
+    <MESSAGE value="order done" />
+    <option name="LAST_COMMIT_MESSAGE" value="order done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605984999053">
@@ -390,10 +387,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="761" y="247" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605635349713" />
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605792885790">
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605985435216">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605792885790" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605985435216" />
     <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605678123125">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

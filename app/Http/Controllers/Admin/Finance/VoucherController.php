@@ -28,7 +28,8 @@ class VoucherController extends Controller
     private function dataValidation(array $data){
         return Validator::make($data, [
             'discount' => ['required', 'min:0', 'max:100'],
-            'expired' => ['required', 'date']
+            'expired' => ['required', 'date'],
+            'status' => ['required']
         ]);
     }
 
@@ -46,7 +47,8 @@ class VoucherController extends Controller
             ],
             'form_params' => [
                 'discount' => $request->discount,
-                'expired_date' => $request->expired
+                'expired_date' => $request->expired,
+                'is_active' => $request->status
             ]
         ])->getBody();
 
@@ -70,13 +72,15 @@ class VoucherController extends Controller
                 'Authorization' => 'Bearer '.Auth::user()->token,
             ],
             'form_params' => [
+                'id_voucher' => $id,
                 'discount' => $request->discount,
-                'expired_at' => $request->expired
+                'expired_date' => $request->expired,
+                'is_active' => $request->status
             ],
             'query' => [
                 'id' => $id
             ]
-        ]);
+        ])->getBody();
 
         $content = json_decode($response, true);
         if ($content['status'] == 'success'){
@@ -92,7 +96,7 @@ class VoucherController extends Controller
                 'Authorization' => 'Bearer '.Auth::user()->token,
             ],
             'form_params' => [
-                'id' => $id
+                'id_voucher' => $id
             ]
         ])->getBody();
 

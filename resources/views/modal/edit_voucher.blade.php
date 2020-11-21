@@ -1,7 +1,7 @@
 <div class="modal fade" id="updateVoucher-{{$voucher['id']}}">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ route('admin.voucher.store') }}" method="POST">
+            <form action="{{ route('admin.voucher.update', $voucher['id']) }}" method="POST">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal-header">
@@ -18,6 +18,10 @@
                             <div class="form-group">
                                 <label for="expired">Berlaku hingga</label>
                                 {!! Form::date('expired', $voucher['expired_date'], ['class'=>'form-control', 'required']) !!}
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), $voucher['is_active'], ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
                             </div>
                         </div>
                     </div>
