@@ -26,24 +26,14 @@
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
+                        @foreach($datas as $data)
                         <tr>
                             <td>12 September 2020</td>
                             <td>Gemar Membaca</td>
                             <td>Membaca seru Deng..</td>
                             <td>Aktif</td>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-circle" title="Edit" data-toggle="modal" data-target="#updateNotif-1">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <a href="{{ route('admin.notif.delete', 1) }}" class="btn btn-circle btn-danger" onclick="event.preventDefault();
-                                            document.getElementById('delete-notif-form').submit();"><i class="fa fa-times"></i></a>
-                                <form action="{{ route('admin.notif.delete', 1) }}" id="delete-notif-form" method="POST" style="display: none">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    @csrf
-                                </form>
-                            </td>
-                            @include('modal.edit_pushnotif')
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

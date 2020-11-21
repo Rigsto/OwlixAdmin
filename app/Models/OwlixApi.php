@@ -4,9 +4,11 @@ namespace App\Models;
 
 class OwlixApi {
     private $base_url;
+    private $url;
 
     public function __construct(){
         $this->base_url = "https://production.owlix-id.com/api/admin/";
+        $this->url = "https://production.owlix-id.com/api/";
     }
 
     //--------------------------------------------------------------------------
@@ -131,5 +133,43 @@ class OwlixApi {
 
     function readSingleVoucher(){
         return $this->base_url."read_single_voucher";
+    }
+
+    //--------------------------------------------------------------------------
+    //mading category
+    function createMadingCategory(){
+        return $this->base_url."create_mading_category";
+    }
+
+    function readMadingCategory(){
+        return $this->base_url."read_mading_category";
+    }
+
+    //--------------------------------------------------------------------------
+    //mading
+    function createMading(){
+        return $this->base_url."create_mading";
+    }
+
+    function readMading(){
+        return $this->base_url."read_mading";
+    }
+
+    function updateMading(){
+        return $this->base_url."update_mading";
+    }
+
+    function deleteMading(){
+        return $this->base_url."delete_mading";
+    }
+
+    //--------------------------------------------------------------------------
+    //province and cities
+    function readProvince(){
+        return $this->url."read_province";
+    }
+
+    function readCity(){
+        return $this->url."read_city";
     }
 }

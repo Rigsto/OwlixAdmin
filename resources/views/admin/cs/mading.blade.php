@@ -25,9 +25,10 @@
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
+                        @foreach($madings as $mading)
                         <tr>
-                            <td>Home Page Zona 1</td>
-                            <td>Zona 1</td>
+                            <td>{{$mading['title']}}</td>
+                            <td>{{$mading['id_mading_category']}}</td>
                             <td>Aktif</td>
                             <td>
                                 <button type="button" class="btn btn-warning btn-circle" title="Edit" data-toggle="modal" data-target="#updateMading-1">
@@ -42,6 +43,7 @@
                             </td>
                             @include('modal.edit_mading')
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

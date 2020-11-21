@@ -76,8 +76,6 @@ Route::group(
 
                 Route::get('notif', [PushNotifController::class, 'index'])->name('notif');
                 Route::post('notif', [PushNotifController::class, 'store'])->name('notif.store');
-                Route::patch('notif/{id}', [PushNotifController::class, 'update'])->name('notif.update');
-                Route::delete('notif/{id}', [PushNotifController::class, 'delete'])->name('notif.delete');
 
                 Route::get('categories', [CategoryController::class, 'category'])->name('categories');
                 Route::post('category/toko', [CategoryController::class, 'storeCategoryToko'])->name('category.toko.store');

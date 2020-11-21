@@ -13,7 +13,6 @@
                         <tr>
                             <th>Tanggal</th>
                             <th>No. Invoice</th>
-                            <th>Nama Pembeli</th>
                             <th>Status Bayar</th>
                             <th>Total</th>
                             <th></th>
@@ -22,20 +21,20 @@
                         <tbody class="text-gray-800">
                         @foreach($orders as $order)
                         <tr>
-                            <td>{{ \Carbon\Carbon::parse($order['created_at']))->setTimeZone('Asia/Jakarta')->toDateTimeString() }}</td>
+                            <td>{{ \Carbon\Carbon::parse($order['created_at'])->setTimeZone('Asia/Jakarta')->toDateTimeString() }}</td>
                             <td>{{ $order['external_id'] }}</td>
-                            <td>{{ $order['id_customer'] }}</td>
                             @if($order['status'] == 'NEW')
-                                <td class="text-uppercase text-warning">Menunggu Pembayaran</td>
+                                <td class="text-uppercase text-warning font-weight-bold">Menunggu Pembayaran</td>
                             @elseif($order['status'] == 'PAID')
-                                <td class="text-uppercase text-primary">Diterima</td>
+                                <td class="text-uppercase text-success font-weight-bold">Diterima</td>
                             @elseif($order['status'] == 'REJECTED')
-                                <td class="text-uppercase text-danger">Dibatalkan</td>
+                                <td class="text-uppercase text-danger font-weight-bold">Dibatalkan</td>
+                            @elseif($order['status'] == 'SHIPPING')
+                                <td class="text-uppercase text-primary font-weight-bold">Dikirim</td>
                             @endif
-                            <td>{{ $order['status'] }}</td>
                             <td>Rp. {{ number_format($order['amount'] + $order['delivery_expense'], 0, ",", ".") }}</td>
                             <td>
-                                <a class="btn btn-info btn-circle" href="{{ route('admin.order.show', ['id'=>1]) }}" title="Order Detail"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-info btn-circle" href="{{ route('admin.order.show', ['id'=>$order['id']]) }}" title="Order Detail"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
                         @endforeach

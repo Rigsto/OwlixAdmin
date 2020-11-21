@@ -20,18 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="dashboard updated">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/VoucherController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_voucher.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_voucher.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/temp.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/BaseDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/BaseDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OwlixApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OwlixApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/order/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_topnav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_topnav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_pushnotif.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,6 +225,7 @@
       <workItem from="1605433963984" duration="19888000" />
       <workItem from="1605586659776" duration="55376000" />
       <workItem from="1605769744986" duration="28560000" />
+      <workItem from="1605959797735" duration="12201000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -374,10 +378,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="dashboard updated" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605881534601">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605984999053">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605881534601" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605984999053" />
     <state x="737" y="437" key="ComposerInitDialogKey" timestamp="1605541433963">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -398,10 +402,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="261" y="293" width="1683" height="888" key="dock-window-1/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605891978166" />
-    <state x="2060" y="196" width="1403" height="757" key="dock-window-2" timestamp="1605892660742">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="283" y="173" width="1403" height="757" key="dock-window-2" timestamp="1605963883649">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="2060" y="196" width="1403" height="757" key="dock-window-2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605892660742" />
+    <state x="283" y="173" width="1403" height="757" key="dock-window-2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605963883649" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605896015148">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

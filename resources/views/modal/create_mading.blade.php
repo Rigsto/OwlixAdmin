@@ -1,7 +1,7 @@
 <div class="modal fade" id="createMading">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ route('admin.info.store') }}" method="POST">
+            <form action="{{ route('admin.info.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-header">
                     <h4 class="modal-title">Tambah Mading</h4>
@@ -16,7 +16,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="kategori">Kategori</label>
-                                {!! Form::select('kategori', array('Home Page', 'News Zona 1', 'News Zona 2', 'News Zona 3'), null,
+                                {!! Form::select('kategori', $categories, null,
                                 ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Kategori--']) !!}
                             </div>
                             <div class="form-group">
