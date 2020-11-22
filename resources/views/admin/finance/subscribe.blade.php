@@ -19,13 +19,15 @@
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
+                        @foreach($datas as $data)
                         <tr>
-                            <td>Togamas</td>
-                            <td>26 September 2020</td>
-                            <td>26 Oktober 2020</td>
-                            <td>Pulsa</td>
-                            <td>Rp. 10.000</td>
+                            <td>{{ $data['name'] }}</td>
+                            <td>-</td>
+                            <td>{{ \Carbon\Carbon::parse($data['expired_date'])->setTimezone('Asia/Jakarta')->toFormattedDateString() }}</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
