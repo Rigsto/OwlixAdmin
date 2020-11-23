@@ -19,24 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="subscribe half done">
-      <change afterPath="$PROJECT_DIR$/public/documents/1606147600_3-SAKURA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/300x300.png" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="change gitignore">
+      <change afterPath="$PROJECT_DIR$/public/img/logo-only.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/BaseDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/BaseDashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OwlixApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OwlixApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone1.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_pushnotif.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_topnav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_topnav.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +215,7 @@
       <workItem from="1605586659776" duration="55376000" />
       <workItem from="1605769744986" duration="28560000" />
       <workItem from="1605959797735" duration="21895000" />
-      <workItem from="1606139473362" duration="4945000" />
+      <workItem from="1606139473362" duration="6093000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -369,7 +357,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606041992667</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="donasi R&#10;notif C&#10;mading CRD&#10;userzone done&#10;donasi dashboard done">
+      <created>1606149349994</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1606149349994</updated>
+    </task>
+    <task id="LOCAL-00022" summary="change gitignore">
+      <created>1606149413783</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1606149413783</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +411,9 @@
     <MESSAGE value="voucher done" />
     <MESSAGE value="mading done, not tested yet" />
     <MESSAGE value="subscribe half done" />
-    <option name="LAST_COMMIT_MESSAGE" value="subscribe half done" />
+    <MESSAGE value="donasi R&#10;notif C&#10;mading CRD&#10;userzone done&#10;donasi dashboard done" />
+    <MESSAGE value="change gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="change gitignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606041774151">
@@ -424,10 +428,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="761" y="247" key="NewPhpClassDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605635349713" />
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1605985435216">
+    <state x="791" y="227" key="RollbackChangesDialog" timestamp="1606149407934">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605985435216" />
+    <state x="791" y="227" key="RollbackChangesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1606149407934" />
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2" timestamp="1606149542630">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="244" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1606149542630" />
     <state x="777" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605678123125">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

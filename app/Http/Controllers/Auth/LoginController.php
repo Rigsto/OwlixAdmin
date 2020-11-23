@@ -50,7 +50,6 @@ class LoginController extends Controller
                 'password' => $request->password
             ]
         ]);
-
         $content =  json_decode($response->getBody(), true);
 
         if ($content['status'] == 'success'){
@@ -73,6 +72,7 @@ class LoginController extends Controller
                 'token' => $token,
                 'name' => $name
             ]);
+
         } else {
             $user = User::create([
                 'email' => $email,

@@ -5,7 +5,7 @@
         <div class="d-sm-flex align-items center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800 text-uppercase">Dashboard</h1>
         </div>
-        {{ \Illuminate\Support\Facades\Auth::user()->token }}
+{{--        {{ \Illuminate\Support\Facades\Auth::user()->token }}--}}
         <div class="row">
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
