@@ -113,6 +113,10 @@ class OwlixApi {
         return $this->base_url."read_push_notification";
     }
 
+    function createPushNotif(){
+        return $this->base_url."create_push_notification";
+    }
+
     //--------------------------------------------------------------------------
     //voucher
     function createVoucher(){
@@ -177,5 +181,11 @@ class OwlixApi {
     //donasi
     function readDonation(){
         return $this->base_url."read_donation";
+    }
+
+    //--------------------------------------------------------------------------
+    //dashboard
+    function getTotalDonation(){
+        return $this->base_url."get_total_donation";
     }
 }

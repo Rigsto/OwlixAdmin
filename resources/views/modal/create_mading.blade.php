@@ -26,7 +26,7 @@
                             <div class="form-group">
                                 <label for="file">Upload Foto Mading</label>
                                 {!! Form::file('file', ['class'=>'form-control-file']) !!}
-                                <img src="http://placehold.it/400x400" alt="" style="width: 200px" class="mt-3">
+                                <img src="{{ asset('img/300x300.png') }}" alt="" style="width: 300px" class="mt-3">
                             </div>
                         </div>
                     </div>

@@ -19,16 +19,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="voucher done">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/create_orphanage.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/modal/edit_orphanage.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="subscribe half done">
+      <change afterPath="$PROJECT_DIR$/public/documents/1606147600_3-SAKURA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/300x300.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/PushNotifController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Main/BaseDashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Main/BaseDashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/OwlixApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OwlixApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/order/temp.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/pushnotif.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone1.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/userzone2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/create_pushnotif.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/create_pushnotif.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +226,8 @@
       <workItem from="1605433963984" duration="19888000" />
       <workItem from="1605586659776" duration="55376000" />
       <workItem from="1605769744986" duration="28560000" />
-      <workItem from="1605959797735" duration="15829000" />
+      <workItem from="1605959797735" duration="21895000" />
+      <workItem from="1606139473362" duration="4945000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -346,7 +355,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605986835539</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="mading done, not tested yet">
+      <created>1605989154475</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605989154475</updated>
+    </task>
+    <task id="LOCAL-00020" summary="subscribe half done">
+      <created>1606041992667</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606041992667</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,13 +407,15 @@
     <MESSAGE value="dashboard updated" />
     <MESSAGE value="order done" />
     <MESSAGE value="voucher done" />
-    <option name="LAST_COMMIT_MESSAGE" value="voucher done" />
+    <MESSAGE value="mading done, not tested yet" />
+    <MESSAGE value="subscribe half done" />
+    <option name="LAST_COMMIT_MESSAGE" value="subscribe half done" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605984999053">
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606041774151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605984999053" />
+    <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1606041774151" />
     <state x="737" y="437" key="ComposerInitDialogKey" timestamp="1605541433963">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -415,6 +440,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="283" y="173" width="1403" height="757" key="dock-window-2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1605963883649" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1606037019611">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1606037019611" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605896015148">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

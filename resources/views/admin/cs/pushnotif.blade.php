@@ -21,17 +21,14 @@
                             <th>Tanggal</th>
                             <th>Headline</th>
                             <th>Deskripsi</th>
-                            <th>Status</th>
-                            <th></th>
                         </tr>
                         </thead>
                         <tbody class="text-gray-800">
                         @foreach($datas as $data)
                         <tr>
-                            <td>12 September 2020</td>
-                            <td>Gemar Membaca</td>
-                            <td>Membaca seru Deng..</td>
-                            <td>Aktif</td>
+                            <td>{{ \Carbon\Carbon::parse($data['created_at'])->setTimezone('Asia/Jakarta')->toFormattedDateString() }}</td>
+                            <td>{{ $data['title'] }}</td>
+                            <td>{{ $data['body'] }}</td>
                         </tr>
                         @endforeach
                         </tbody>

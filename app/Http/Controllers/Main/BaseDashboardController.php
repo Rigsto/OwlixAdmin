@@ -54,4 +54,16 @@ class BaseDashboardController extends Controller
         }
         return [];
     }
+
+    public function getDonations(){
+        $client = new Client();
+        $response = $client->get((new OwlixApi())->getTotalDonation(), [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ]
+        ])->getBody();
+
+        $content = json_decode($response, true);
+        return $content['data'];
+    }
 }

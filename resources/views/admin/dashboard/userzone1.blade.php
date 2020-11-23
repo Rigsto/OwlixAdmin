@@ -22,12 +22,16 @@
                         <tbody class="text-gray-800">
                         @foreach($users as $user)
                         <tr>
-                            <td>{{ \Carbon\Carbon::parse($user['created_at'])->toFormattedDateString() }}</td>
+                            <td>{{ \Carbon\Carbon::parse($user['created_at'])->setTimezone('Asia/Jakarta')->toFormattedDateString() }}</td>
                             <td>{{ $user['name'] }}</td>
                             <td>{{ $user['phone_number'] }}</td>
                             <td>Rp. {{ number_format($user['balance'], 0, ",", ".") }}</td>
-                            <td>-</td>
-                            <td>-</td>
+                            <td>{{ $user['total_listing'] }}</td>
+                            @if($user['is_subscribe'])
+                                <td class="text-uppercase text-success font-weight-bold">Aktif</td>
+                            @else
+                                <td class="text-uppercase text-danger font-weight-bold">Tidak Aktif</td>
+                            @endif
                         </tr>
                         @endforeach
                         </tbody>

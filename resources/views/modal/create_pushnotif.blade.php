@@ -12,19 +12,15 @@
                         <div class="col-md-12 text-gray-800">
                             <div class="form-group">
                                 <label for="tgl">Tanggal</label>
-                                {!! Form::date('tgl', null, ['class'=>'form-control']) !!}
+                                {!! Form::date('tgl', \Carbon\Carbon::now(), ['class'=>'form-control', 'disabled']) !!}
                             </div>
                             <div class="form-group">
                                 <label for="headline">Headline</label>
-                                {!! Form::text('headline', null, ['class'=>'form-control']) !!}
+                                {!! Form::text('title', null, ['class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
                                 <label for="deskripsi">Deskripsi</label>
-                                {!! Form::textarea('deskripsi', null, ['class'=>'form-control']) !!}
-                            </div>
-                            <div class="form-group">
-                                <label for="status">Status</label>
-                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), null, ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
+                                {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
                             </div>
                         </div>
                     </div>

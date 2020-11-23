@@ -69,7 +69,7 @@ class DonasiController extends Controller
         ])->getBody();
         $content = json_decode($response, true);
 
-        if ($content['success'] == 'success'){
+        if ($content['status'] == 'success'){
             return redirect()->route('admin.donasi.index')->with('Success', 'Data Panti Asuhan berhasil ditambahkan');
         }
         return redirect()->route('admin.donasi.index')->with('Fail', $content['message']);
@@ -97,7 +97,7 @@ class DonasiController extends Controller
         ])->getBody();
         $content = json_decode($response, true);
 
-        if ($content['success'] == 'success'){
+        if ($content['status'] == 'success'){
             return redirect()->route('admin.donasi.index')->with('Success', 'Data Panti Asuhan berhasil diubah');
         }
         return redirect()->route('admin.donasi.index')->with('Fail', $content['message']);
@@ -115,7 +115,7 @@ class DonasiController extends Controller
         ])->getBody();
         $content = json_decode($response, true);
 
-        if ($content['success'] == 'success'){
+        if ($content['status'] == 'success'){
             return redirect()->route('admin.donasi.index')->with('Success', 'Data Panti Asuhan berhasil diubah');
         }
         return redirect()->route('admin.donasi.index')->with('Fail', $content['message']);

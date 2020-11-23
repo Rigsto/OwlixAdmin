@@ -13,15 +13,15 @@ class MadingController extends Controller
 {
     public function index(){
         $client = new Client();
-        $response = $client->post((new OwlixApi())->readMading(), [
+        $response = $client->get((new OwlixApi())->readMading(), [
             'headers' => [
-                'Authorization' => Auth::user()->token
+                'Authorization' => 'Bearer '.Auth::user()->token
             ]
         ])->getBody();
 
         $content = json_decode($response, true);
         return view('admin.cs.mading', [
-            'madings' => $content['data'],
+            'madings' => $content['data'] ?? [],
             'categories' => $this->getMadingCategories()
         ]);
     }
@@ -37,19 +37,39 @@ class MadingController extends Controller
     public function store(Request $request){
         $validator = $this->madingValidation($request->all());
 
-        if ($validator->fails()){
+        if ($validator->fails()) {
             return redirect()->route('admin.info')->with('Error', $validator->errors());
         }
+
+        $file = $request->file('file');
+        $name = time() . '_' . $file->getClientOriginalName();
+        $path = base_path() .'/public/documents/';
+        $resource = fopen($file,"r") or die("File upload Problems");
+        $file->move($path, $name);
 
         $client = new Client();
         $response = $client->post((new OwlixApi())->createMading(), [
             'headers' => [
-                'Authorization' => Auth::user()->token
+                'Authorization' => 'Bearer '.Auth::user()->token,
             ],
-            'form_params' => [
-                'title' => $request->name,
-                'image' => $request->file,
-                'id_mading_category' => $request->kategori
+            'multipart' => [
+                [
+                    'name' => 'title',
+                    'contents' => $request->name
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'image',
+                    'contents' => fopen($path . $name, 'r'),
+                ],
+                [
+                    'name' => 'id_mading_category',
+                    'contents' => $request->kategori
+                ],
+                [
+                    'name' => 'is_active',
+                    'contents' => $request->status
+                ],
             ]
         ])->getBody();
 
@@ -68,30 +88,33 @@ class MadingController extends Controller
         }
 
         $client = new Client();
-        $response = $client->post((new OwlixApi())->updateMading(), [
+        $response = $client->patch((new OwlixApi())->updateMading(), [
             'headers' => [
-                'Authorization' => Auth::user()->token
+                'Authorization' => 'Bearer '.Auth::user()->token,
             ],
         ])->getBody();
 
         $content = json_decode($response, true);
         if ($content['status'] == 'success'){
-            return redirect()->route('admin.info')->with('Success', 'Mading berhasil ditambahkan');
+            return redirect()->route('admin.info')->with('Success', 'Mading berhasil diubah');
         }
         return redirect()->route('admin.info')->with('Fail', $content['message']);
     }
 
     public function delete($id){
         $client = new Client();
-        $response = $client->post((new OwlixApi())->deleteMading(), [
+        $response = $client->delete((new OwlixApi())->deleteMading(), [
             'headers' => [
-                'Authorization' => Auth::user()->token
+                'Authorization' => 'Bearer '.Auth::user()->token,
             ],
+            'query' => [
+                'id_mading' => $id
+            ]
         ])->getBody();
 
         $content = json_decode($response, true);
         if ($content['status'] == 'success'){
-            return redirect()->route('admin.info')->with('Success', 'Mading berhasil ditambahkan');
+            return redirect()->route('admin.info')->with('Success', 'Mading berhasil dihapus');
         }
         return redirect()->route('admin.info')->with('Fail', $content['message']);
     }
@@ -100,13 +123,17 @@ class MadingController extends Controller
         $client = new Client();
         $response = $client->get((new OwlixApi())->readMadingCategory(), [
             'headers' => [
-                'Authorization' => Auth::user()->token,
-            ]
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
         ])->getBody();
 
         $content = json_decode($response, true);
         if ($content['status'] == 'success'){
-            return $content['data'];
+            $arr = [];
+            foreach ($content['data'] as $data){
+                $arr[$data['id']] = $data['name'];
+            }
+            return $arr;
         }
         return [];
     }
@@ -127,7 +154,7 @@ class MadingController extends Controller
         $client = new Client();
         $response = $client->post((new OwlixApi())->createMadingCategory(), [
             'headers' => [
-                'Authorization' => Auth::user()->token
+                'Authorization' => 'Bearer '.Auth::user()->token,
             ],
         ])->getBody();
 
