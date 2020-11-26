@@ -30,7 +30,8 @@ class MadingController extends Controller
         return Validator::make($data, [
             'name' => ['required'],
             'kategori' => ['required'],
-            'file' => ['mimes:jpeg,jpg,png', 'max:2048', 'required']
+            'file' => ['mimes:jpeg,jpg,png', 'max:2048', 'required'],
+            'status' => ['required']
         ]);
     }
 
@@ -68,7 +69,7 @@ class MadingController extends Controller
                 ],
                 [
                     'name' => 'is_active',
-                    'contents' => $request->status
+                    'contents' => $request->status == "1" ? "TRUE" : "FALSE"
                 ],
             ]
         ])->getBody();
@@ -80,19 +81,34 @@ class MadingController extends Controller
         return redirect()->route('admin.info')->with('Fail', $content['message']);
     }
 
+    private function updateMadingValidation(array $data){
+        return Validator::make($data, [
+            'name' => ['required'],
+            'kategori' => ['required'],
+            'status' => ['required']
+        ]);
+    }
+
     public function update(Request $request, $id){
-        $validator = $this->madingValidation($request->all());
+        $validator = $this->updateMadingValidation($request->all());
 
         if ($validator->fails()){
             return redirect()->route('admin.info')->with('Error', $validator->errors());
         }
 
         $client = new Client();
-        $response = $client->patch((new OwlixApi())->updateMading(), [
-            'headers' => [
-                'Authorization' => 'Bearer '.Auth::user()->token,
-            ],
-        ])->getBody();
+
+        if ($request->file != null){
+            $file = $request->file('file');
+            $name = time() . '_' . $file->getClientOriginalName();
+            $path = base_path() .'/public/documents/';
+            $resource = fopen($file,"r") or die("File upload Problems");
+            $file->move($path, $name);
+
+            $response = $client->post((new OwlixApi())->updateMading(), $this->updateWithImage($request, $id, $path.$name))->getBody();
+        } else {
+            $response = $client->post((new OwlixApi())->updateMading(), $this->updateWithoutImage($request, $id))->getBody();
+        }
 
         $content = json_decode($response, true);
         if ($content['status'] == 'success'){
@@ -101,8 +117,74 @@ class MadingController extends Controller
         return redirect()->route('admin.info')->with('Fail', $content['message']);
     }
 
+    private function updateWithImage(Request $request, $id, $name){
+        return [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
+            'multipart' => [
+                [
+                    'name' => 'title',
+                    'contents' => $request->name
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'image',
+                    'contents' => fopen($name, 'r'),
+                ],
+                [
+                    'name' => 'id_mading_category',
+                    'contents' => $request->kategori
+                ],
+                [
+                    'name' => 'is_active',
+                    'contents' => $request->status == "1" ? "TRUE" : "FALSE"
+                ],
+                [
+                    'name' => 'id_mading',
+                    'contents' => $id
+                ],
+                [
+                    'name' => '_method',
+                    'contents' => 'POST'
+                ]
+            ]
+        ];
+    }
+
+    private function updateWithoutImage(Request $request, $id){
+        return [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
+            'multipart' => [
+                [
+                    'name' => 'title',
+                    'contents' => $request->name
+                ],
+                [
+                    'name' => 'id_mading_category',
+                    'contents' => $request->kategori
+                ],
+                [
+                    'name' => 'is_active',
+                    'contents' => $request->status == "1" ? "TRUE" : "FALSE"
+                ],
+                [
+                    'name' => 'id_mading',
+                    'contents' => $id
+                ],
+                [
+                    'name' => '_method',
+                    'contents' => 'POST'
+                ]
+            ]
+        ];
+    }
+
     public function delete($id){
         $client = new Client();
+        return $id;
         $response = $client->delete((new OwlixApi())->deleteMading(), [
             'headers' => [
                 'Authorization' => 'Bearer '.Auth::user()->token,

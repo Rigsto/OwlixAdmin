@@ -35,8 +35,8 @@
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>
                                 <a href="{{ route('admin.donasi.delete', $orphan['id']) }}" class="btn btn-circle btn-danger" onclick="event.preventDefault();
-                                            document.getElementById('delete-donasi-form').submit();"><i class="fa fa-times"></i></a>
-                                <form action="{{ route('admin.donasi.delete', $orphan['id']) }}" id="delete-donasi-form" method="POST" style="display: none">
+                                            document.getElementById('delete-donasi-form-{{$orphan['id']}}').submit();"><i class="fa fa-times"></i></a>
+                                <form action="{{ route('admin.donasi.delete', $orphan['id']) }}" id="delete-donasi-form-{{$orphan['id']}}" method="POST" style="display: none">
                                     <input type="hidden" name="_method" value="DELETE">
                                     @csrf
                                 </form>

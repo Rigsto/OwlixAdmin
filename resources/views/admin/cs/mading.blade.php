@@ -28,15 +28,15 @@
                         @foreach($madings as $mading)
                         <tr>
                             <td>{{$mading['title']}}</td>
-                            <td>{{$mading['id_mading_category'] != null ? $categories[$mading['id_mading_category']] : ""}}</td>
-                            <td>Aktif</td>
+                            <td>{{$categories[$mading['id_mading_category']]}}</td>
+                            <td>{{$mading['is_active'] == "TRUE" ? "Aktif" : "Tidak Aktif"}}</td>
                             <td>
                                 <button type="button" class="btn btn-warning btn-circle" title="Edit" data-toggle="modal" data-target="#updateMading-{{$mading['id']}}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>
                                 <a href="{{ route('admin.info.delete', $mading['id']) }}" class="btn btn-circle btn-danger" onclick="event.preventDefault();
-                                            document.getElementById('delete-mading-form').submit();"><i class="fa fa-times"></i></a>
-                                <form action="{{ route('admin.info.delete', $mading['id']) }}" id="delete-mading-form" method="POST" style="display: none">
+                                            document.getElementById('delete-mading-form-{{$mading['id']}}').submit();"><i class="fa fa-times"></i></a>
+                                <form action="{{ route('admin.info.delete', $mading['id']) }}" id="delete-mading-form-{{$mading['id']}}" method="POST" style="display: none">
                                     <input type="hidden" name="_method" value="DELETE">
                                     @csrf
                                 </form>

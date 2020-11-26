@@ -17,12 +17,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="kategori">Kategori</label>
-                                {!! Form::select('kategori', $categories, $mading['id_mading_category'] != null ? $categories[$mading['id_mading_category']] : 0,
+                                {!! Form::select('kategori', $categories, $mading['id_mading_category'],
                                 ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Kategori--']) !!}
                             </div>
                             <div class="form-group">
                                 <label for="status">Status</label>
-                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), $mading['is_active'], ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
+                                {!! Form::select('status', array(1=>'Aktif', 0=>'Tidak Aktif'), $mading['is_active'] == "TRUE" ? 1 : 0, ['class'=>'form-control custom-select', 'placeholder'=>'--Pilih Salah Satu--']) !!}
                             </div>
                             <div class="form-group">
                                 <label for="file">Upload Foto Mading</label>

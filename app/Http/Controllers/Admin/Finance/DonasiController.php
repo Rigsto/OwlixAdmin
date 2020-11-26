@@ -30,13 +30,36 @@ class DonasiController extends Controller
         $response = $client->get((new OwlixApi())->readDonation(), [
             'headers' => [
                 'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
+            'form_params' => [
+                'id_orphanage' => $id
             ]
         ])->getBody();
         $content = json_decode($response, true);
 
+        $orphan = $this->getOrphanByID($id);
+
         return view('admin.finance.donasi.show', [
+            'orphan' => $orphan,
             'donations' => $content['data'] ?? []
         ]);
+    }
+
+    private function getOrphanByID($id){
+        $client = new Client();
+        $response = $client->get((new OwlixApi())->readOrphanages(), [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ]
+        ])->getBody();
+        $content = json_decode($response, true);
+
+        foreach ($content['data'] as $data){
+            if ($data['id'] == $id){
+                return $data;
+            }
+        }
+        return null;
     }
 
     private function orphansValidator(array $data){
@@ -116,7 +139,7 @@ class DonasiController extends Controller
         $content = json_decode($response, true);
 
         if ($content['status'] == 'success'){
-            return redirect()->route('admin.donasi.index')->with('Success', 'Data Panti Asuhan berhasil diubah');
+            return redirect()->route('admin.donasi.index')->with('Success', 'Data Panti Asuhan berhasil dihapus');
         }
         return redirect()->route('admin.donasi.index')->with('Fail', $content['message']);
     }
