@@ -38,8 +38,8 @@
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>
                                 <a href="{{ route('admin.voucher.delete', $voucher['id']) }}" class="btn btn-circle btn-danger" onclick="event.preventDefault();
-                                            document.getElementById('delete-voucher-form').submit();"><i class="fa fa-times"></i></a>
-                                <form action="{{ route('admin.voucher.delete', $voucher['id']) }}" id="delete-voucher-form" method="POST" style="display: none">
+                                            document.getElementById('delete-voucher-form-{{$voucher['id']}}').submit();"><i class="fa fa-times"></i></a>
+                                <form action="{{ route('admin.voucher.delete', $voucher['id']) }}" id="delete-voucher-form-{{$voucher['id']}}" method="POST" style="display: none">
                                     <input type="hidden" name="_method" value="DELETE">
                                     @csrf
                                 </form>

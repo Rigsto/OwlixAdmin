@@ -35,8 +35,8 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </button>
                                             <a href="{{ route('admin.category.toko.delete', $partner['id']) }}" class="btn btn-circle btn-danger" onclick="event.preventDefault();
-                                            document.getElementById('delete-toko-form').submit();"><i class="fa fa-times"></i></a>
-                                            <form action="{{ route('admin.category.toko.delete', $partner['id']) }}" id="delete-toko-form" method="POST" style="display: none">
+                                            document.getElementById('delete-toko-form-{{$partner['id']}}').submit();"><i class="fa fa-times"></i></a>
+                                            <form action="{{ route('admin.category.toko.delete', $partner['id']) }}" id="delete-toko-form-{{$partner['id']}}" method="POST" style="display: none">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 @csrf
                                             </form>
@@ -79,8 +79,8 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </button>
                                             <a href="{{ route('admin.category.item.delete', $item['id']) }}" class="btn btn-circle btn-danger" onclick="event.preventDefault();
-                                            document.getElementById('delete-item-form').submit();"><i class="fa fa-times"></i></a>
-                                            <form action="{{ route('admin.category.item.delete', $item['id']) }}" id="delete-item-form" method="POST" style="display: none">
+                                            document.getElementById('delete-item-form-{{$item['id']}}').submit();"><i class="fa fa-times"></i></a>
+                                            <form action="{{ route('admin.category.item.delete', $item['id']) }}" id="delete-item-form-{{$item['id']}}" method="POST" style="display: none">
                                                 <input type="hidden" name="_method" value="DELETE">
                                                 @csrf
                                             </form>

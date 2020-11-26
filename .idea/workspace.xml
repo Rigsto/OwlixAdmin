@@ -19,14 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="bug fix: name and photo top nav">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/DonasiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/mading.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/donasi/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="mading worked, donasi can't update">
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +213,7 @@
       <workItem from="1605769744986" duration="28560000" />
       <workItem from="1605959797735" duration="21895000" />
       <workItem from="1606139473362" duration="7063000" />
-      <workItem from="1606390362572" duration="6892000" />
+      <workItem from="1606390362572" duration="7306000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -381,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606150591206</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="mading worked, donasi can't update">
+      <created>1606399727838</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1606399727838</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +426,8 @@
     <MESSAGE value="donasi R&#10;notif C&#10;mading CRD&#10;userzone done&#10;donasi dashboard done" />
     <MESSAGE value="change gitignore" />
     <MESSAGE value="bug fix: name and photo top nav" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix: name and photo top nav" />
+    <MESSAGE value="mading worked, donasi can't update" />
+    <option name="LAST_COMMIT_MESSAGE" value="mading worked, donasi can't update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606041774151">
