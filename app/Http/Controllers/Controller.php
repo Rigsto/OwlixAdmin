@@ -7,6 +7,7 @@ use GuzzleHttp\Client;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -45,5 +46,14 @@ class Controller extends BaseController
             }
         }
         return "";
+    }
+
+    public function savePhoto(Request $request, $key){
+        $file = $request->file($key);
+        $name = time() . '_' . $file->getClientOriginalName();
+        $path = base_path() .'/public/documents/';
+        $resource = fopen($file,"r") or die("File upload Problems");
+        $file->move($path, $name);
+        return $path.$name;
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CustomerService\CategoryController;
 use App\Http\Controllers\Admin\CustomerService\MadingController;
 use App\Http\Controllers\Admin\CustomerService\PushNotifController;
 use App\Http\Controllers\Admin\Finance\DonasiController;
+use App\Http\Controllers\Admin\Finance\NetworkController;
 use App\Http\Controllers\Admin\Finance\OrderController;
 use App\Http\Controllers\Admin\Finance\VoucherController;
 use App\Http\Controllers\Admin\FinanceController;
@@ -60,6 +61,13 @@ Route::group(
                 Route::post('donasi', [DonasiController::class, 'addOrphans'])->name('donasi.store');
                 Route::patch('donasi/{id}', [DonasiController::class, 'updateOrphans'])->name('donasi.update');
                 Route::delete('donasi/{id}', [DonasiController::class, 'deleteOrphans'])->name('donasi.delete');
+
+                Route::get('network', [NetworkController::class, 'index'])->name('network.index');
+                Route::get('network/create', [NetworkController::class, 'create'])->name('network.create');
+                Route::post('network/create', [NetworkController::class, 'store'])->name('network.store');
+                Route::get('network/{id}', [NetworkController::class, 'show'])->name('network.show');
+                Route::patch('network/{id}', [NetworkController::class, 'update'])->name('network.update');
+                Route::delete('network/{id}', [NetworkController::class, 'delete'])->name('network.delete');
             }
         );
 

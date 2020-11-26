@@ -30,7 +30,7 @@
                             <td>{{ $orphan['orphanage_address'] }}</td>
                             <td>Rp. {{number_format(0, 0, "", ",")}}</td>
                             <td class="text-center">
-                                <a class="btn btn-info btn-circle" href="{{ route('admin.donasi.show', ['id'=>1]) }}" title="Detail"><i class="fa fa-eye"></i></a>
+                                <a class="btn btn-info btn-circle" href="{{ route('admin.donasi.show', $orphan['id']) }}" title="Detail"><i class="fa fa-eye"></i></a>
                                 <button type="button" class="btn btn-warning btn-circle" title="Edit" data-toggle="modal" data-target="#updateOrphanage-{{$orphan['id']}}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </button>

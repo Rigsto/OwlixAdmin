@@ -1,7 +1,7 @@
 <div class="modal fade" id="updateMading-{{$mading['id']}}">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ route('admin.info.update', 1) }}" method="POST">
+            <form action="{{ route('admin.info.update', 1) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="_method" value="PATCH">
                 <div class="modal-header">

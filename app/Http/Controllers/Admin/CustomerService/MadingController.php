@@ -42,11 +42,7 @@ class MadingController extends Controller
             return redirect()->route('admin.info')->with('Error', $validator->errors());
         }
 
-        $file = $request->file('file');
-        $name = time() . '_' . $file->getClientOriginalName();
-        $path = base_path() .'/public/documents/';
-        $resource = fopen($file,"r") or die("File upload Problems");
-        $file->move($path, $name);
+        $pathname = $this->savePhoto($request, 'file');
 
         $client = new Client();
         $response = $client->post((new OwlixApi())->createMading(), [
@@ -61,7 +57,7 @@ class MadingController extends Controller
                 [
                     'Content-Type' => 'multipart/form-data',
                     'name' => 'image',
-                    'contents' => fopen($path . $name, 'r'),
+                    'contents' => fopen($pathname, 'r'),
                 ],
                 [
                     'name' => 'id_mading_category',
@@ -99,13 +95,8 @@ class MadingController extends Controller
         $client = new Client();
 
         if ($request->file != null){
-            $file = $request->file('file');
-            $name = time() . '_' . $file->getClientOriginalName();
-            $path = base_path() .'/public/documents/';
-            $resource = fopen($file,"r") or die("File upload Problems");
-            $file->move($path, $name);
-
-            $response = $client->post((new OwlixApi())->updateMading(), $this->updateWithImage($request, $id, $path.$name))->getBody();
+            $pathname = $this->savePhoto($request, 'file', $request->file);
+            $response = $client->post((new OwlixApi())->updateMading(), $this->updateWithImage($request, $id, $pathname))->getBody();
         } else {
             $response = $client->post((new OwlixApi())->updateMading(), $this->updateWithoutImage($request, $id))->getBody();
         }
@@ -184,7 +175,6 @@ class MadingController extends Controller
 
     public function delete($id){
         $client = new Client();
-        return $id;
         $response = $client->delete((new OwlixApi())->deleteMading(), [
             'headers' => [
                 'Authorization' => 'Bearer '.Auth::user()->token,

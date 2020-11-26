@@ -19,9 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="mading worked, donasi can't update">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cs/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/voucher.blade.php" afterDir="false" />
+    <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="delete bug fixed">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/NetworkController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/network/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/network/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/network/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/OwlixApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OwlixApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +224,7 @@
       <workItem from="1605769744986" duration="28560000" />
       <workItem from="1605959797735" duration="21895000" />
       <workItem from="1606139473362" duration="7063000" />
-      <workItem from="1606390362572" duration="7306000" />
+      <workItem from="1606390362572" duration="21885000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>
@@ -383,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606399727838</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="delete bug fixed">
+      <created>1606399933866</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1606399933866</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,9 +445,14 @@
     <MESSAGE value="change gitignore" />
     <MESSAGE value="bug fix: name and photo top nav" />
     <MESSAGE value="mading worked, donasi can't update" />
-    <option name="LAST_COMMIT_MESSAGE" value="mading worked, donasi can't update" />
+    <MESSAGE value="delete bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete bug fixed" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="667" y="167" key="#PHP" timestamp="1606422358667">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="167" key="#PHP/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1606422358667" />
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606041774151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

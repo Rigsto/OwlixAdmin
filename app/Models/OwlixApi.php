@@ -188,4 +188,22 @@ class OwlixApi {
     function getTotalDonation(){
         return $this->base_url."get_total_donation";
     }
+
+    //--------------------------------------------------------------------------
+    //need
+    function createNeed(){
+        return $this->base_url."create_need";
+    }
+
+    function readNeed(){
+        return $this->base_url."read_need";
+    }
+
+    function updateNeed(){
+        return $this->base_url."update_need";
+    }
+
+    function deleteNeed(){
+        return $this->base_url."delete_need";
+    }
 }
