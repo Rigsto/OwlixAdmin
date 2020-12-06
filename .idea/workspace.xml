@@ -20,19 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dea720d-610b-47a9-96e4-3b03668ec694" name="Default Changelist" comment="delete bug fixed">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/NetworkController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/network/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/network/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/finance/network/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerService/MadingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/OwlixApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/OwlixApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/finance/donasi/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modal/edit_mading.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/NetworkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Finance/NetworkController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,6 +214,7 @@
       <workItem from="1605959797735" duration="21895000" />
       <workItem from="1606139473362" duration="7063000" />
       <workItem from="1606390362572" duration="21885000" />
+      <workItem from="1607261319338" duration="2015000" />
     </task>
     <task id="LOCAL-00001" summary="login page finished">
       <created>1605505314146</created>

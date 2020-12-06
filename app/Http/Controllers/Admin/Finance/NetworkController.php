@@ -46,37 +46,31 @@ class NetworkController extends Controller
             return redirect()->route('admin.network.index')->with('Error', $validator->errors());
         }
 
-        $files = [];
-        if ($request->comp != null){
-            $path = $this->savePhoto($request, 'comp');
-            $arr = [
-                'Content-Type' => 'multipart/form-data',
-                'name' => 'company_images[0]',
-                'contents' => fopen($path, 'r')
-            ];
-            array_push($files, $arr);
-        }
-        if ($request->product0 != null){
-            $path = $this->savePhoto($request, 'product0');
-            $arr = [
-                'Content-Type' => 'multipart/form-data',
-                'name' => 'product_images[0]',
-                'contents' => fopen($path, 'r')
-            ];
-            array_push($files, $arr);
-        }
         if ($request->product1 != null){
-            $path = $this->savePhoto($request, 'product1');
-            $arr = [
-                'Content-Type' => 'multipart/form-data',
-                'name' => 'product_images[1]',
-                'contents' => fopen($path, 'r')
-            ];
-            array_push($files, $arr);
+            $res = $this->storeWithProd1(
+                $request,
+                $this->savePhoto($request, 'comp'),
+                $this->savePhoto($request, 'product0'),
+                $this->savePhoto($request, 'product1'));
+        } else {
+            $res = $this->storeWithoutProd1(
+                $request,
+                $this->savePhoto($request, 'comp'),
+                $this->savePhoto($request, 'product0'));
         }
 
         $client = new Client();
-        $response = $client->post((new OwlixApi())->createNeed(), [
+        $response = $client->post((new OwlixApi())->createNeed(), $res)->getBody();
+
+        $content = json_decode($response, true);
+        if ($content['status'] == 'success'){
+            return redirect()->route('admin.network.index')->with('Success', 'Network berhasil dibuat');
+        }
+        return redirect()->route('admin.network.index')->with('Fail', $content['message']);
+    }
+
+    private function storeWithProd1($request, $pathComp, $pathProd0, $pathProd1){
+        return [
             'headers' => [
                 'Authorization' => 'Bearer '.Auth::user()->token,
             ],
@@ -84,6 +78,10 @@ class NetworkController extends Controller
                 [
                     'name' => 'company_name',
                     'contents' => $request->name,
+                ],
+                [
+                    'name' => 'description',
+                    'contents' => '',
                 ],
                 [
                     'name' => 'address',
@@ -101,15 +99,67 @@ class NetworkController extends Controller
                     'name' => 'valid_until',
                     'contents' => $request->until,
                 ],
-                $files
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'company_images[0]',
+                    'contents' => fopen($pathComp, 'r')
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'product_images[0]',
+                    'contents' => fopen($pathProd0, 'r')
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'product_images[1]',
+                    'contents' => fopen($pathProd1, 'r')
+                ]
             ]
-        ])->getBody();
+        ];
+    }
 
-        $content = json_decode($response, true);
-        if ($content['status'] == 'success'){
-            return redirect()->route('admin.network.index')->with('Success', 'Network berhasil dibuat');
-        }
-        return redirect()->route('admin.network.index')->with('Fail', $content['message']);
+    private function storeWithoutProd1($request, $pathComp, $pathProd0){
+        return [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
+            'multipart' => [
+                [
+                    'name' => 'company_name',
+                    'contents' => $request->name,
+                ],
+                [
+                    'name' => 'description',
+                    'contents' => '',
+                ],
+                [
+                    'name' => 'address',
+                    'contents' => $request->address,
+                ],
+                [
+                    'name' => 'price_request',
+                    'contents' => $request->price,
+                ],
+                [
+                    'name' => 'date_of_filing',
+                    'contents' => $request->created,
+                ],
+                [
+                    'name' => 'valid_until',
+                    'contents' => $request->until,
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'company_images[0]',
+                    'contents' => fopen($pathComp, 'r')
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'product_images[0]',
+                    'contents' => fopen($pathProd0, 'r')
+                ],
+            ]
+        ];
     }
 
     public function show($id){
@@ -136,37 +186,33 @@ class NetworkController extends Controller
             return redirect()->route('admin.network.index')->with('Error', $validator->errors());
         }
 
-        $files = [];
-        if ($request->comp != null){
-            $path = $this->savePhoto($request, 'comp', $request->comp);
-            $arr = [
-                'Content-Type' => 'multipart/form-data',
-                'name' => 'company_images[0]',
-                'contents' => fopen($path, 'r')
-            ];
-            array($files, $arr);
-        }
-        if ($request->product0 != null){
-            $path = $this->savePhoto($request, 'product0', $request->product0);
-            $arr = [
-                'Content-Type' => 'multipart/form-data',
-                'name' => 'product_images[0]',
-                'contents' => fopen($path, 'r')
-            ];
-            array($files, $arr);
-        }
         if ($request->product1 != null){
-            $path = $this->savePhoto($request, 'product1', $request->product1);
-            $arr = [
-                'Content-Type' => 'multipart/form-data',
-                'name' => 'product_images[1]',
-                'contents' => fopen($path, 'r')
-            ];
-            array($files, $arr);
+            $res = $this->updateWithProd1(
+                $request,
+                $this->savePhoto($request, 'comp'),
+                $this->savePhoto($request, 'product0'),
+                $this->savePhoto($request, 'product1'),
+                $id);
+        } else {
+            $res = $this->updateWithoutProd1(
+                $request,
+                $this->savePhoto($request, 'comp'),
+                $this->savePhoto($request, 'product0'),
+                $id);
         }
 
         $client = new Client();
-        $response = $client->post((new OwlixApi())->updateNeed(), [
+        $response = $client->post((new OwlixApi())->updateNeed(), $res)->getBody();
+
+        $content = json_decode($response, true);
+        if ($content['status'] == 'success'){
+            return redirect()->route('admin.network.index')->with('Success', 'Network berhasil diubah');
+        }
+        return redirect()->route('admin.network.index')->with('Fail', $content['message']);
+    }
+
+    private function updateWithProd1($request, $pathComp, $pathProd0, $pathProd1, $id){
+        return [
             'headers' => [
                 'Authorization' => 'Bearer '.Auth::user()->token,
             ],
@@ -199,15 +245,71 @@ class NetworkController extends Controller
                     'name' => 'valid_until',
                     'contents' => $request->until,
                 ],
-                $files
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'company_images[0]',
+                    'contents' => fopen($pathComp, 'r')
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'product_images[0]',
+                    'contents' => fopen($pathProd0, 'r')
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'product_images[1]',
+                    'contents' => fopen($pathProd1, 'r')
+                ]
             ]
-        ])->getBody();
+        ];
+    }
 
-        $content = json_decode($response, true);
-        if ($content['status'] == 'success'){
-            return redirect()->route('admin.network.index')->with('Success', 'Network berhasil diubah');
-        }
-        return redirect()->route('admin.network.index')->with('Fail', $content['message']);
+    private function updateWithoutProd1($request, $pathComp, $pathProd0, $id){
+        return [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ],
+            'multipart' => [
+                [
+                    'name' => '_method',
+                    'contents' => 'POST',
+                ],
+                [
+                    'name' => 'id_need',
+                    'contents' => $id
+                ],
+                [
+                    'name' => 'company_name',
+                    'contents' => $request->name,
+                ],
+                [
+                    'name' => 'address',
+                    'contents' => $request->address,
+                ],
+                [
+                    'name' => 'price_request',
+                    'contents' => $request->price,
+                ],
+                [
+                    'name' => 'date_of_filing',
+                    'contents' => $request->created,
+                ],
+                [
+                    'name' => 'valid_until',
+                    'contents' => $request->until,
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'company_images[0]',
+                    'contents' => fopen($pathComp, 'r')
+                ],
+                [
+                    'Content-Type' => 'multipart/form-data',
+                    'name' => 'product_images[0]',
+                    'contents' => fopen($pathProd0, 'r')
+                ],
+            ]
+        ];
     }
 
     public function delete($id){

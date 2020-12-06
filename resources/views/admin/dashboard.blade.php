@@ -77,7 +77,7 @@
                         <div class="row no-gutters align-items center">
                             <div class="col mr-2">
                                 <div class="small font-weight-bold text-info text-uppercase mb-1">Jumlah Owlix Network</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">x20x</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalNetwork }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-network-wired fa-2x text-gray-300"></i>

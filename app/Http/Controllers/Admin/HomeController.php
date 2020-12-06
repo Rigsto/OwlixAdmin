@@ -16,6 +16,7 @@ class HomeController extends BaseDashboardController
             'totalCustomer' => count($this->getUserCustomer()),
             'totalOrder' => count($this->getOrders()),
             'totalDonation' => $this->getDonations(),
+            'totalNetwork' => count($this->getNeeds()),
         ]);
     }
 

@@ -66,4 +66,16 @@ class BaseDashboardController extends Controller
         $content = json_decode($response, true);
         return $content['data'];
     }
+
+    public function getNeeds(){
+        $client = new Client();
+        $response = $client->get((new OwlixApi())->readNeed(), [
+            'headers' => [
+                'Authorization' => 'Bearer '.Auth::user()->token,
+            ]
+        ])->getBody();
+
+        $content = json_decode($response, true);
+        return $content['data'];
+    }
 }
