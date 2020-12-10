@@ -35,7 +35,11 @@ class NetworkController extends Controller
             'address' => ['required'],
             'price' => ['required', 'min:0'],
             'created' => ['required', 'date'],
-            'until' => ['required', 'date', 'after:created']
+            'until' => ['required', 'date', 'after:created'],
+            'title' => ['required'],
+            'desc' => ['required'],
+            'quantity' => ['required'],
+            'phone' => ['required']
         ]);
     }
 
@@ -80,8 +84,16 @@ class NetworkController extends Controller
                     'contents' => $request->name,
                 ],
                 [
+                    'name' => 'title',
+                    'contents' => $request->title,
+                ],
+                [
+                    'name' => 'quantity',
+                    'contents' => $request->quantity,
+                ],
+                [
                     'name' => 'description',
-                    'contents' => '',
+                    'contents' => $request->desc,
                 ],
                 [
                     'name' => 'address',
@@ -90,6 +102,10 @@ class NetworkController extends Controller
                 [
                     'name' => 'price_request',
                     'contents' => $request->price,
+                ],
+                [
+                    'name' => 'phone_number',
+                    'contents' => $request->phone
                 ],
                 [
                     'name' => 'date_of_filing',
@@ -129,8 +145,16 @@ class NetworkController extends Controller
                     'contents' => $request->name,
                 ],
                 [
+                    'name' => 'title',
+                    'contents' => $request->title,
+                ],
+                [
+                    'name' => 'quantity',
+                    'contents' => $request->quantity,
+                ],
+                [
                     'name' => 'description',
-                    'contents' => '',
+                    'contents' => $request->desc,
                 ],
                 [
                     'name' => 'address',
@@ -139,6 +163,10 @@ class NetworkController extends Controller
                 [
                     'name' => 'price_request',
                     'contents' => $request->price,
+                ],
+                [
+                    'name' => 'phone_number',
+                    'contents' => $request->phone
                 ],
                 [
                     'name' => 'date_of_filing',
@@ -168,13 +196,13 @@ class NetworkController extends Controller
             'headers' => [
                 'Authorization' => 'Bearer '.Auth::user()->token,
             ],
-            'form_params' => [
+            'query' => [
                 'id_need' => $id
             ]
         ])->getBody();
         $content = json_decode($response, true);
 
-        return view('admin.network.show', [
+        return view('admin.finance.network.show', [
             'network' => $content['data']
         ]);
     }
@@ -202,7 +230,7 @@ class NetworkController extends Controller
         }
 
         $client = new Client();
-        $response = $client->post((new OwlixApi())->updateNeed(), $res)->getBody();
+        $response = $client->patch((new OwlixApi())->updateNeed(), $res)->getBody();
 
         $content = json_decode($response, true);
         if ($content['status'] == 'success'){
@@ -230,12 +258,28 @@ class NetworkController extends Controller
                     'contents' => $request->name,
                 ],
                 [
+                    'name' => 'title',
+                    'contents' => $request->title,
+                ],
+                [
+                    'name' => 'quantity',
+                    'contents' => $request->quantity,
+                ],
+                [
+                    'name' => 'description',
+                    'contents' => $request->desc,
+                ],
+                [
                     'name' => 'address',
                     'contents' => $request->address,
                 ],
                 [
                     'name' => 'price_request',
                     'contents' => $request->price,
+                ],
+                [
+                    'name' => 'phone_number',
+                    'contents' => $request->phone
                 ],
                 [
                     'name' => 'date_of_filing',
@@ -248,17 +292,17 @@ class NetworkController extends Controller
                 [
                     'Content-Type' => 'multipart/form-data',
                     'name' => 'company_images[0]',
-                    'contents' => fopen($pathComp, 'r')
+                    'contents' => $pathComp != null ? fopen($pathComp, 'r') : null
                 ],
                 [
                     'Content-Type' => 'multipart/form-data',
                     'name' => 'product_images[0]',
-                    'contents' => fopen($pathProd0, 'r')
+                    'contents' => $pathProd0 != null ? fopen($pathProd0, 'r') : null
                 ],
                 [
                     'Content-Type' => 'multipart/form-data',
                     'name' => 'product_images[1]',
-                    'contents' => fopen($pathProd1, 'r')
+                    'contents' => $pathProd1 != null ? fopen($pathProd1, 'r') : null
                 ]
             ]
         ];
@@ -271,10 +315,6 @@ class NetworkController extends Controller
             ],
             'multipart' => [
                 [
-                    'name' => '_method',
-                    'contents' => 'POST',
-                ],
-                [
                     'name' => 'id_need',
                     'contents' => $id
                 ],
@@ -283,12 +323,28 @@ class NetworkController extends Controller
                     'contents' => $request->name,
                 ],
                 [
+                    'name' => 'title',
+                    'contents' => $request->title,
+                ],
+                [
+                    'name' => 'quantity',
+                    'contents' => $request->quantity,
+                ],
+                [
+                    'name' => 'description',
+                    'contents' => $request->desc,
+                ],
+                [
                     'name' => 'address',
                     'contents' => $request->address,
                 ],
                 [
                     'name' => 'price_request',
                     'contents' => $request->price,
+                ],
+                [
+                    'name' => 'phone_number',
+                    'contents' => $request->phone
                 ],
                 [
                     'name' => 'date_of_filing',
@@ -301,12 +357,12 @@ class NetworkController extends Controller
                 [
                     'Content-Type' => 'multipart/form-data',
                     'name' => 'company_images[0]',
-                    'contents' => fopen($pathComp, 'r')
+                    'contents' => $pathComp != null ? fopen($pathComp, 'r') : null
                 ],
                 [
                     'Content-Type' => 'multipart/form-data',
                     'name' => 'product_images[0]',
-                    'contents' => fopen($pathProd0, 'r')
+                    'contents' => $pathProd0 != null ? fopen($pathProd0, 'r') : null
                 ],
             ]
         ];

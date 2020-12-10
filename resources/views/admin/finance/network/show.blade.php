@@ -43,8 +43,8 @@
                             {!! Form::text('address', $network['address'], ['class'=>'form-control']) !!}
                         </div>
                         <div class="col-md-4">
-                            <label for="price" class="text-gray-800">Harga Permintaan</label>
-                            {!! Form::number('price', $network['price_request'], ['class'=>'form-control', 'min'=>0]) !!}
+                            <label for="phone" class="text-gray-800">No Telepon</label>
+                            {!! Form::text('phone', $network['phone_number'], ['class'=>'form-control']) !!}
                         </div>
                     </div>
                     <div class="row">
@@ -61,24 +61,54 @@
             </div>
             <div class="card shadow mb-3">
                 <div class="card-header">
+                    <h1 class="h4 mb-0 font-weight-bold text-primary">Informasi Produk</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label for="title" class="text-gray-800">Nama Barang</label>
+                            {!! Form::text('title', $network['title'], ['class'=>'form-control']) !!}
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label for="quantity" class="text-gray-800">Jumlah Barang</label>
+                            {!! Form::number('quantity', $network['quantity'], ['class'=>'form-control', 'min'=>0]) !!}
+                        </div>
+                        <div class="col-md-4">
+                            <label for="price" class="text-gray-800">Harga Permintaan</label>
+                            {!! Form::number('price', $network['price_request'], ['class'=>'form-control', 'min'=>0]) !!}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="desc" class="text-gray-800">Description</label>
+                            <textarea name="desc" rows="3" class="form-control">{{$network['description']}}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mb-3">
+                <div class="card-header">
                     <h1 class="h4 mb-0 font-weight-bold text-primary">Dokumentasi</h1>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4 form-group text-center">
                             <label for="comp" class="text-gray-800">Profil Perusahaan</label><br>
-                            <img src="{{ $network['company_images[0]'] }}" alt="" style="width: 300px" class="mb-2" id="comp">
+                            <img src="{{ $network['need_company_images'][0]['image'] ?? asset('img/300x300.png') }}" alt="" style="width: 300px" class="mb-2" id="comp">
                             {!! Form::file('comp', ['class'=>'form-control']) !!}
+                            {!! Form::hidden('bcomp', $network['need_company_images'][0]['image']) !!}
                         </div>
                         <div class="col-md-4 form-group text-center">
                             <label for="product0" class="text-gray-800">Foto Produk 1</label><br>
-                            <img src="{{ $network['product_images[0]'] }}" alt="" style="width: 300px" class="mb-2" id="prod0">
+                            <img src="{{ $network['need_product_images'][0]['image'] ?? asset('img/300x300.png') }}" alt="" style="width: 300px" class="mb-2" id="prod0">
                             {!! Form::file('product0', ['class'=>'form-control']) !!}
+                            {!! Form::hidden('bprod0', $network['need_product_images'][0]['image']) !!}
                         </div>
                         <div class="col-md-4 form-group text-center">
                             <label for="product1" class="text-gray-800">Foto Produk 2</label><br>
-                            <img src="{{ $network['product_images[1]'] }}" alt="" style="width: 300px" class="mb-2" id="prod1">
+                            <img src="{{ $network['need_product_images'][1]['image'] ?? asset('img/300x300.png') }}" alt="" style="width: 300px" class="mb-2" id="prod1">
                             {!! Form::file('product1', ['class'=>'form-control']) !!}
+                            {!! Form::hidden('bprod1', $network['need_product_images'][1]['image']) !!}
                         </div>
                     </div>
                 </div>

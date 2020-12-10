@@ -50,6 +50,7 @@ class Controller extends BaseController
 
     public function savePhoto(Request $request, $key){
         $file = $request->file($key);
+        if ($file == null) return null;
         $name = time() . '_' . $file->getClientOriginalName();
         $path = base_path() .'/public/documents/';
         $resource = fopen($file,"r") or die("File upload Problems");

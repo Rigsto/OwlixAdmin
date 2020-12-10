@@ -1,16 +1,5 @@
 @extends('layouts.app')
 @section('styles')
-    <style>
-        input::-webkit-inner-spin-button,
-        input::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-    </style>
 @endsection
 @section('content')
     <div class="container-fluid">
@@ -42,8 +31,8 @@
                             {!! Form::text('address', null, ['class'=>'form-control']) !!}
                         </div>
                         <div class="col-md-4">
-                            <label for="price" class="text-gray-800">Harga Permintaan</label>
-                            {!! Form::number('price', null, ['class'=>'form-control', 'min'=>0]) !!}
+                            <label for="phone" class="text-gray-800">No Telepon</label>
+                            {!! Form::text('phone', null, ['class'=>'form-control']) !!}
                         </div>
                     </div>
                     <div class="row">
@@ -54,6 +43,33 @@
                         <div class="col-md-4 form-group">
                             <label for="until" class="text-gray-800">Berlaku Hingga</label>
                             {!! Form::date('until', \Carbon\Carbon::now(), ['class'=>'form-control']) !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mb-3">
+                <div class="card-header">
+                    <h1 class="h4 mb-0 font-weight-bold text-primary">Informasi Produk</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label for="title" class="text-gray-800">Nama Barang</label>
+                            {!! Form::text('title', null, ['class'=>'form-control']) !!}
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label for="quantity" class="text-gray-800">Jumlah Barang</label>
+                            {!! Form::number('quantity', 0, ['class'=>'form-control', 'min'=>0]) !!}
+                        </div>
+                        <div class="col-md-4">
+                            <label for="price" class="text-gray-800">Harga Permintaan</label>
+                            {!! Form::number('price', null, ['class'=>'form-control', 'min'=>0]) !!}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="desc" class="text-gray-800">Description</label>
+                            <textarea name="desc" rows="3" class="form-control"></textarea>
                         </div>
                     </div>
                 </div>
